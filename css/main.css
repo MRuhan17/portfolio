@@ -33,3 +33,193 @@ transform: scale(1.05);
 .project-page {
 padding: 40px;
 }
+
+
+/* ========== Netflix-Inspired Centered Layout ========== */
+
+/* Center all main containers */
+.container, .hero-content, .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Hero Section - Bold & Centered */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 5rem !important;
+    font-weight: 900 !important;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.hero .tagline {
+    font-size: 1.8rem !important;
+    font-weight: 500;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem !important;
+    opacity: 0.8;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+/* Section Titles - Centered */
+.section-title {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    text-align: center;
+    margin: 60px auto 50px;
+}
+
+/* Projects Grid - Centered */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* Skills Grid - Centered */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    text-align: center;
+    min-width: 200px;
+}
+
+.skill-category h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* About Section - Centered */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    text-align: center;
+}
+
+.about-text p {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.achievements {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.achievement-item {
+    text-align: center;
+}
+
+/* Contact Section - Centered */
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+/* Navbar - Centered Items */
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem !important;
+    }
+    
+    .hero .tagline {
+        font-size: 1.3rem !important;
+    }
+    
+    .section-title {
+        font-size: 2rem !important;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievements {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
