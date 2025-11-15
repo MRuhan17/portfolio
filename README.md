@@ -1,4 +1,4 @@
-# 🚀 Ruhan Mulla | Portfolio Website
+# 🚀 Ruhulalemeen Mulla | Portfolio Website
 
 <div align="center">
 
@@ -192,7 +192,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📧 Contact
 
-**Ruhan Mulla**
+**Ruhulalemeen Mulla**
 - Portfolio: [mruhan17.github.io/portfolio](https://mruhan17.github.io/portfolio/)
 - GitHub: [@MRuhan17](https://github.com/MRuhan17)
 - LinkedIn: [Ruhulalemeen Mulla](https://linkedin.com/in/ruhulalemeen-mulla)
@@ -212,6 +212,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ### ⭐ Star this repo if you found it helpful!
 
-**Made with ❤️ by Ruhan Mulla**
+**Made with ❤️ by Ruhulalemeen Mulla**
 
 </div>
