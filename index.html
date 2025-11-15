@@ -1,1 +1,61 @@
 <!-- Portfolio Homepage -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ruhan Mulla Portfolio</title>
+<link rel="stylesheet" href="css/main.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="landing" class="screen">
+<div class="center">
+<h1 class="name">Ruhan Mulla</h1>
+<p class="tag">Building intelligent systems and breaking limits.</p>
+<canvas id="particles"></canvas>
+</div>
+</div>
+
+
+<div id="projects" class="screen">
+<h2>Projects</h2>
+<div class="project-grid">
+<div class="project-card" onclick="openProject('projects/f1.html')">
+<h3>F1 Race Predictor</h3>
+<p>Machine learning model predicting race outcomes.</p>
+</div>
+<div class="project-card" onclick="openProject('projects/premierleague.html')">
+<h3>Premier League Predictor</h3>
+<p>Stats and machine learning meet football.</p>
+</div>
+<div class="project-card" onclick="openProject('projects/medication.html')">
+<h3>Medication Adherence System</h3>
+<p>Smart care system for elderly medication tracking.</p>
+</div>
+</div>
+</div>
+
+
+<div id="about" class="screen">
+<h2>About Me</h2>
+<p>I am a CS student exploring AI, building projects and growing my technical career. Microsoft Student Ambassador and future AI engineer.</p>
+</div>
+
+
+<div id="contact" class="screen">
+<h2>Contact</h2>
+<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+<input type="hidden" name="access_key" value="YOUR_KEY" />
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Your Email" required />
+<textarea name="message" placeholder="Message" required></textarea>
+<button type="submit">Send</button>
+</form>
+</div>
+
+
+<script src="js/particles.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
