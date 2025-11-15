@@ -258,12 +258,7 @@ padding: 40px;
     display: none !important;
 }
 
-/* 3. Center 3rd project card when odd number */
-.projects-grid .project-card:nth-child(3):last-child {
-    grid-column: 1 / -1;
-    max-width: 400px;
-    margin: 0 auto;
-}
+
 
 /* 4. Improve tech stack styling */
 .project-tech {
