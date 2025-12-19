@@ -1,217 +1,135 @@
-// Main JavaScript for Enhanced Portfolio
+// =======================
+// Easter Eggs for Ruhulalemeen Mulla's Portfolio
+// =======================
 
-// ========== Smooth Scroll Navigation ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+// Easter Egg 1: AI Lab (Press G + R + I + D)
+(function setupAiLabEgg() {
+  const gridKeys = ['g', 'r', 'i', 'd'];
+  let keyIndex = 0;
 
-// ========== Scroll Animations ==========
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all sections and cards
-document.querySelectorAll('.section, .project-card, .skill-category').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
-// ========== 3D Tilt Effect for Project Cards ==========
-const cards = document.querySelectorAll('[data-tilt]');
-
-cards.forEach(card => {
-    card.addEventListener('mousemove', handleTilt);
-    card.addEventListener('mouseleave', resetTilt);
-});
-
-function handleTilt(e) {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
-    
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-}
-
-function resetTilt(e) {
-    const card = e.currentTarget;
-    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-}
-
-// ========== Navbar Background on Scroll ==========
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(15, 15, 15, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
+  document.addEventListener('keydown', (e) => {
+    if (e.key === gridKeys[keyIndex]) {
+      keyIndex++;
+      if (keyIndex === gridKeys.length) {
+        activateAiLab();
+        keyIndex = 0;
+      }
     } else {
-        navbar.style.background = 'transparent';
-        navbar.style.backdropFilter = 'none';
-        navbar.style.boxShadow = 'none';
+      keyIndex = 0;
     }
-});
+  });
 
-// ========== Typing Effect for Hero Title ==========
-const heroTitle = document.querySelector('.hero h1');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    let i = 0;
-    
-    function typeWriter() {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
+  function activateAiLab() {
+    const overlay = document.getElementById('ai-lab-overlay');
+    if (overlay) {
+      overlay.classList.remove('ai-lab-hidden');
+      console.log('%c🧪 AI Lab Unlocked! (Press G + R + I + D)', 'color: #64ffda; font-weight: bold; font-size: 14px;');
     }
-    
-    // Start typing after a short delay
-    setTimeout(typeWriter, 500);
-}
+  }
+})();
 
-// ========== Cursor Trail Effect ==========
-const coords = { x: 0, y: 0 };
-const circles = document.querySelectorAll('.cursor-circle');
+// Easter Egg 2: F1 Monaco Mode (Press M + O + N + A + C + O)
+(function setupF1EasterEgg() {
+  const f1Keys = ['m', 'o', 'n', 'a', 'c', 'o'];
+  let keyIndex = 0;
 
-if (circles.length === 0) {
-    // Create cursor circles if they don't exist
-    for (let i = 0; i < 20; i++) {
-        const circle = document.createElement('div');
-        circle.className = 'cursor-circle';
-        circle.style.cssText = `
-            position: fixed;
-            width: ${8 - i * 0.3}px;
-            height: ${8 - i * 0.3}px;
-            border-radius: 50%;
-            background: rgba(100, 255, 218, ${0.6 - i * 0.03});
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        `;
-        document.body.appendChild(circle);
-    }
-}
-
-const cursorCircles = document.querySelectorAll('.cursor-circle');
-
-document.addEventListener('mousemove', (e) => {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-});
-
-function animateCursor() {
-    let x = coords.x;
-    let y = coords.y;
-    
-    cursorCircles.forEach((circle, index) => {
-        circle.style.left = x - 4 + 'px';
-        circle.style.top = y - 4 + 'px';
-        circle.style.transform = `scale(${(cursorCircles.length - index) / cursorCircles.length})`;
-        
-        const nextCircle = cursorCircles[index + 1] || cursorCircles[0];
-        x += (parseInt(nextCircle.style.left) - x) * 0.3;
-        y += (parseInt(nextCircle.style.top) - y) * 0.3;
-    });
-    
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
-
-// ========== Form Submission ==========
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual endpoint)
-        setTimeout(() => {
-            submitBtn.textContent = 'Message Sent! ✓';
-            submitBtn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
-            
-            setTimeout(() => {
-                contactForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 3000);
-        }, 1500);
-    });
-}
-
-// ========== Project Navigation ==========
-function openProject(page) {
-    window.location.href = page;
-}
-
-// ========== Add Page Load Animation ==========
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// ========== Easter Egg: Konami Code ==========
-const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-let konamiIndex = 0;
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-            activateEasterEgg();
-            konamiIndex = 0;
-        }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === f1Keys[keyIndex]) {
+      keyIndex++;
+      if (keyIndex === f1Keys.length) {
+        activateF1Mode();
+        keyIndex = 0;
+      }
     } else {
-        konamiIndex = 0;
+      keyIndex = 0;
     }
-});
+  });
 
-function activateEasterEgg() {
-    document.body.style.animation = 'rainbow 2s linear infinite';
-    setTimeout(() => {
-        document.body.style.animation = '';
-    }, 5000);
+  function activateF1Mode() {
+    const overlay = document.getElementById('f1-overlay');
+    if (overlay) {
+      overlay.classList.remove('hidden');
+      playF1Audio();
+      console.log('%c🏎️ WELCOME TO MONACO! (Press M + O + N + A + C + O)', 'color: #ff0000; font-weight: bold; font-size: 14px;');
+    }
+  }
+
+  function playF1Audio() {
+    const sound = new Audio('data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==');
+    sound.play().catch(() => {});
+  }
+})();
+
+// Easter Egg 3: Typing Speed Challenge (Press T + Y + P + E)
+(function setupTypingEgg() {
+  const typeKeys = ['t', 'y', 'p', 'e'];
+  let keyIndex = 0;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === typeKeys[keyIndex]) {
+      keyIndex++;
+      if (keyIndex === typeKeys.length) {
+        showTypingChallenge();
+        keyIndex = 0;
+      }
+    } else {
+      keyIndex = 0;
+    }
+  });
+
+  function showTypingChallenge() {
+    const overlay = document.getElementById('typing-overlay');
+    if (overlay) {
+      overlay.classList.remove('hidden');
+      console.log('%c⌨️ Typing Challenge Unlocked! (Press T + Y + P + E)', 'color: #00ff00; font-weight: bold; font-size: 14px;');
+    }
+  }
+})();
+
+// Easter Egg 4: F1 Championship Stats (Press C + H + A + M + P + I + O + N)
+(function setupF1StatsEgg() {
+  const champKeys = ['c', 'h', 'a', 'm', 'p', 'i', 'o', 'n'];
+  let keyIndex = 0;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === champKeys[keyIndex]) {
+      keyIndex++;
+      if (keyIndex === champKeys.length) {
+        showF1Stats();
+        keyIndex = 0;
+      }
+    } else {
+      keyIndex = 0;
+    }
+  });
+
+  function showF1Stats() {
+    const stats = [
+      'Max Verstappen: 3x World Champion 🏆',
+      'Mercedes: Most Constructors Titles',
+      'Lewis Hamilton: 103 Race Wins',
+      'Fastest Lap Record Holder: Max Verstappen',
+      'DRS Deploy Speed: 320+ km/h',
+      'Pit Stop Record: 1.82 seconds (Red Bull)'
+    ];
+    const stat = stats[Math.floor(Math.random() * stats.length)];
+    console.log('%c🏁 F1 Stat: ' + stat, 'color: #FFD700; font-weight: bold; font-size: 13px;');
+  }
+})();
+
+// Close overlay functions
+function closeOverlay(overlayId) {
+  const overlay = document.getElementById(overlayId);
+  if (overlay) {
+    overlay.classList.add('hidden');
+  }
 }
+window.closeOverlay = closeOverlay;
 
-console.log('%c🚀 Welcome to Ruhan\'s Portfolio!', 'color: #64ffda; font-size: 20px; font-weight: bold;');
-console.log('%cTry the Konami Code for a surprise! ⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️BA', 'color: #8892b0; font-size: 12px;');
+// Welcome message with Easter Eggs guide
+console.log('%c🚀 Welcome to Ruhulalemeen Mulla\'s Portfolio!', 'color: #64ffda; font-size: 20px; font-weight: bold;');
+console.log('%c✨ Easter Eggs Found:', 'color: #8892b0; font-size: 14px; font-weight: bold;');
+console.log('%c  1. Press G + R + I + D for AI Lab', 'color: #8892b0; font-size: 12px;');
+console.log('%c  2. Press M + O + N + A + C + O for F1 Monaco Mode', 'color: #ff0000; font-size: 12px;');
+console.log('%c  3. Press T + Y + P + E for Typing Challenge', 'color: #00ff00; font-size: 12px;');
+console.log('%c  4. Press C + H + A + M + P + I + O + N for F1 Championship Stats', 'color: #FFD700; font-size: 12px;');
