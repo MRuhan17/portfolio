@@ -208,6 +208,39 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
+## 🥚 Easter Eggs
+
+This portfolio includes interactive Easter eggs that celebrate my passion for Formula 1 and computer science. Try the following key combinations:
+
+### Unlock Secret Features
+
+| Trigger | Feature | Description |
+|---------|---------|-------------|
+| **G + R + I + D** | AI Lab | Access the hidden AI research & experimentation lab |
+| **M + O + N + A + C + O** | F1 Monaco Mode | Experience the legendary Monaco Grand Prix with F1 styling and sound effects |
+| **T + Y + P + E** | Typing Challenge | A typing speed test inspired by Monkeytype for competitive programmers |
+| **C + H + A + M + P + I + O + N** | F1 Championship Stats | Random F1 statistics and achievements displayed in the console |
+
+### How to Use
+
+1. Open your browser's Developer Console (`F12` or `Right-click` → `Inspect` → `Console`)
+2. Press the key combination slowly and deliberately
+3. Watch the console for confirmation messages
+4. Enjoy the hidden features!
+
+### Technical Details
+
+The Easter eggs are implemented using:
+- **Event Listeners**: Real-time keyboard input detection
+- **Sequential Key Matching**: Pattern recognition for key combinations
+- **DOM Manipulation**: Dynamic overlay rendering
+- **Audio Integration**: Browser Audio API for F1 sound effects
+- **Console Styling**: Styled console messages for better UX
+
+These features showcase my passion for combining interactive web development with domain-specific interests (Formula 1 racing, competitive programming, AI/ML research).
+
+---
+
 <div align="center">
 
 ### ⭐ Star this repo if you found it helpful!
