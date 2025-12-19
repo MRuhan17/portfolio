@@ -8,7 +8,8 @@
   let keyIndex = 0;
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === gridKeys[keyIndex]) {
+    const key = e.key.toLowerCase();
+    if (key === gridKeys[keyIndex]) {
       keyIndex++;
       if (keyIndex === gridKeys.length) {
         activateAiLab();
@@ -22,7 +23,7 @@
   function activateAiLab() {
     const overlay = document.getElementById('ai-lab-overlay');
     if (overlay) {
-      overlay.classList.remove('ai-lab-hidden');
+      overlay.style.display = 'flex';
       console.log('%c🧪 AI Lab Unlocked! (Press G + R + I + D)', 'color: #64ffda; font-weight: bold; font-size: 14px;');
     }
   }
@@ -34,7 +35,8 @@
   let keyIndex = 0;
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === f1Keys[keyIndex]) {
+    const key = e.key.toLowerCase();
+    if (key === f1Keys[keyIndex]) {
       keyIndex++;
       if (keyIndex === f1Keys.length) {
         activateF1Mode();
@@ -48,15 +50,33 @@
   function activateF1Mode() {
     const overlay = document.getElementById('f1-overlay');
     if (overlay) {
-      overlay.classList.remove('hidden');
-      playF1Audio();
+      overlay.style.display = 'flex';
+      playF1Sound();
       console.log('%c🏎️ WELCOME TO MONACO! (Press M + O + N + A + C + O)', 'color: #ff0000; font-weight: bold; font-size: 14px;');
     }
   }
 
-  function playF1Audio() {
-    const sound = new Audio('data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==');
-    sound.play().catch(() => {});
+  function playF1Sound() {
+    // Create F1 engine sound using Web Audio API
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      
+      oscillator.connect(gain);
+      gain.connect(audioContext.destination);
+      
+      oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.3);
+      
+      gain.gain.setValueAtTime(0.3, audioContext.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.3);
+    } catch (e) {
+      // Audio API not available, silently fail
+    }
   }
 })();
 
@@ -66,7 +86,8 @@
   let keyIndex = 0;
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === typeKeys[keyIndex]) {
+    const key = e.key.toLowerCase();
+    if (key === typeKeys[keyIndex]) {
       keyIndex++;
       if (keyIndex === typeKeys.length) {
         showTypingChallenge();
@@ -80,7 +101,7 @@
   function showTypingChallenge() {
     const overlay = document.getElementById('typing-overlay');
     if (overlay) {
-      overlay.classList.remove('hidden');
+      overlay.style.display = 'flex';
       console.log('%c⌨️ Typing Challenge Unlocked! (Press T + Y + P + E)', 'color: #00ff00; font-weight: bold; font-size: 14px;');
     }
   }
@@ -92,7 +113,8 @@
   let keyIndex = 0;
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === champKeys[keyIndex]) {
+    const key = e.key.toLowerCase();
+    if (key === champKeys[keyIndex]) {
       keyIndex++;
       if (keyIndex === champKeys.length) {
         showF1Stats();
@@ -110,7 +132,9 @@
       'Lewis Hamilton: 103 Race Wins',
       'Fastest Lap Record Holder: Max Verstappen',
       'DRS Deploy Speed: 320+ km/h',
-      'Pit Stop Record: 1.82 seconds (Red Bull)'
+      'Pit Stop Record: 1.82 seconds (Red Bull)',
+      'Most Race Wins: Lewis Hamilton (103)',
+      'Youngest Race Winner: Max Verstappen'
     ];
     const stat = stats[Math.floor(Math.random() * stats.length)];
     console.log('%c🏁 F1 Stat: ' + stat, 'color: #FFD700; font-weight: bold; font-size: 13px;');
@@ -121,7 +145,7 @@
 function closeOverlay(overlayId) {
   const overlay = document.getElementById(overlayId);
   if (overlay) {
-    overlay.classList.add('hidden');
+    overlay.style.display = 'none';
   }
 }
 window.closeOverlay = closeOverlay;
