@@ -16,6 +16,55 @@ window.addEventListener('load', () => {
   }
 });
 
+// Create modal overlay on screen
+function showModal(title, content) {
+  const modal = document.createElement('div');
+  modal.style.cssText = `
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+  `;
+  
+  const box = document.createElement('div');
+  box.style.cssText = `
+    background: rgba(15,15,20,0.95); border: 1px solid rgba(100,255,218,0.4);
+    border-radius: 12px; padding: 32px; max-width: 500px; width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    color: #ffffff; font-family: 'Inter', system-ui;
+  `;
+  
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '×';
+  closeBtn.style.cssText = `
+    position: absolute; top: 12px; right: 16px; background: none;
+    border: none; color: #ffffff; font-size: 28px; cursor: pointer;
+    opacity: 0.7; transition: opacity 0.2s;
+  `;
+  closeBtn.onmouseover = () => closeBtn.style.opacity = '1';
+  closeBtn.onmouseout = () => closeBtn.style.opacity = '0.7';
+  closeBtn.onclick = () => modal.remove();
+  
+  const titleEl = document.createElement('h2');
+  titleEl.textContent = title;
+  titleEl.style.cssText = `
+    margin: 0 0 16px 0; font-size: 1.6rem; color: #64ffda;
+  `;
+  
+  const contentEl = document.createElement('div');
+  contentEl.innerHTML = content;
+  contentEl.style.cssText = `
+    font-size: 0.95rem; line-height: 1.7; color: #e0e0e0;
+  `;
+  
+  box.appendChild(closeBtn);
+  box.appendChild(titleEl);
+  box.appendChild(contentEl);
+  modal.appendChild(box);
+  modal.onclick = (e) => e.target === modal && modal.remove();
+  document.body.appendChild(modal);
+}
+
 // Key sequence detector
 function KeySequenceDetector(keys, callback) {
   let index = 0;
@@ -33,13 +82,18 @@ function KeySequenceDetector(keys, callback) {
   });
 }
 
-// Easter Egg 1: AI LAB (G + R + I + D)
+// Easter Egg 1: AI LAB
 KeySequenceDetector(['g', 'r', 'i', 'd'], () => {
-  alert('🧪 AI Lab Unlocked!\n\n🤖 Current Research: LLM Fine-tuning & Sentiment Analysis\n📊 Projects: Movie Recommender, Smart Medicine Reminder\n⚡ Skills: Python, TensorFlow, PyTorch\n\nBuilding intelligent systems through experimentation...');
+  showModal('🧪 AI Lab Unlocked', `
+    <p><strong>🤖 Current Research:</strong><br>LLM Fine-tuning & Sentiment Analysis</p>
+    <p><strong>📊 Projects:</strong><br>Movie Recommender (Sentiment ML)<br>Smart Medicine Reminder</p>
+    <p><strong>⚡ Skills:</strong><br>Python, TensorFlow, PyTorch, Data Processing</p>
+    <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 16px;">Building intelligent systems through experimentation...</p>
+  `);
   console.log('%c🧪 AI Lab Unlocked!', 'color: #64ffda; font-weight: bold; font-size: 14px;');
 });
 
-// Easter Egg 2: F1 MONACO (M + O + N + A + C + O)
+// Easter Egg 2: F1 MONACO
 KeySequenceDetector(['m', 'o', 'n', 'a', 'c', 'o'], () => {
   const f1Stats = [
     'Max Verstappen: 3x World Champion 🏆',
@@ -49,7 +103,11 @@ KeySequenceDetector(['m', 'o', 'n', 'a', 'c', 'o'], () => {
     'DRS: Speed Boost to 370+ km/h'
   ];
   const stat = f1Stats[Math.floor(Math.random() * f1Stats.length)];
-  alert('🏎️ MONACO GRAND PRIX\n\n' + stat + '\n\nWelcome to the legendary F1 circuit!');
+  showModal('🏎️ MONACO GRAND PRIX', `
+    <p style="font-size: 1.1rem; color: #FFD700; font-weight: bold;">${stat}</p>
+    <p>Welcome to the legendary F1 circuit!</p>
+    <p style="opacity: 0.7; font-size: 0.9rem;">The most glamorous race on the calendar...</p>
+  `);
   console.log('%c🏎️ F1 MODE ACTIVATED!', 'color: #ff0000; font-weight: bold; font-size: 14px;');
   playF1Sound();
 });
@@ -69,7 +127,7 @@ function playF1Sound() {
   } catch(e) {}
 }
 
-// Easter Egg 3: TYPING CHALLENGE (T + Y + P + E)
+// Easter Egg 3: TYPING CHALLENGE
 KeySequenceDetector(['t', 'y', 'p', 'e'], () => {
   const challenges = [
     'The quick brown fox jumps over the lazy dog',
@@ -77,36 +135,57 @@ KeySequenceDetector(['t', 'y', 'p', 'e'], () => {
     'Competitive programming builds problem solving skills'
   ];
   const text = challenges[Math.floor(Math.random() * challenges.length)];
-  const userInput = prompt('⌨️ TYPING CHALLENGE\n\nType this as fast as you can:\n\n' + text + '\n\nYour input:');
-  if (userInput) {
-    let correct = 0;
-    for (let i = 0; i < userInput.length && i < text.length; i++) {
-      if (userInput[i] === text[i]) correct++;
-      else break;
+  
+  let html = `
+    <p style="background: rgba(0,255,0,0.1); padding: 12px; border-radius: 8px; font-family: monospace; margin-bottom: 16px;">
+      ${text}
+    </p>
+    <input type="text" id="typing-input" placeholder="Type here..." style="
+      width: 100%; padding: 10px; border: 1px solid #00ff00; background: rgba(0,0,0,0.5);
+      color: #00ff00; border-radius: 6px; font-family: monospace; box-sizing: border-box;
+    ">
+    <div id="typing-result" style="margin-top: 12px; font-size: 0.9rem;"></div>
+  `;
+  
+  showModal('⌨️ Typing Challenge', html);
+  
+  setTimeout(() => {
+    const input = document.getElementById('typing-input');
+    const result = document.getElementById('typing-result');
+    if (input) {
+      input.focus();
+      input.addEventListener('input', (e) => {
+        const typed = e.target.value;
+        let correct = 0;
+        for (let i = 0; i < typed.length && i < text.length; i++) {
+          if (typed[i] === text[i]) correct++;
+          else break;
+        }
+        const accuracy = typed.length > 0 ? Math.round((correct / typed.length) * 100) : 0;
+        const wpm = typed.length > 0 ? Math.round((typed.length / 5) / 0.25) : 0;
+        if (result) result.innerHTML = `<p style="color: #00ff00;"><strong>Accuracy: ${accuracy}% | WPM: ${wpm}</strong></p>`;
+      });
     }
-    const accuracy = Math.round((correct / userInput.length) * 100);
-    const wpm = Math.round((userInput.length / 5) / 0.25);
-    alert('Accuracy: ' + accuracy + '%\nWPM: ' + wpm + '\nCorrect chars: ' + correct + '/' + userInput.length);
-  }
+  }, 100);
+  
   console.log('%c⌨️ Typing Challenge Started!', 'color: #00ff00; font-weight: bold; font-size: 14px;');
 });
 
-// Easter Egg 4: F1 CHAMPION STATS (C + H + A + M + P + I + O + N)
+// Easter Egg 4: F1 CHAMPION STATS
 KeySequenceDetector(['c', 'h', 'a', 'm', 'p', 'i', 'o', 'n'], () => {
   const stats = [
-    '🏆 Max Verstappen: 3x World Champion (2021-2023)',
+    '🏆 Max Verstappen: 3x World Champion',
     '🏁 Lewis Hamilton: 103 Race Wins',
     '💫 Mercedes: 8 Constructor Championships',
-    '🔱 Red Bull: Fastest Pit Stop (1.82 sec)',
-    '⚡ DRS System: Speed Boost to 370+ km/h',
+    '🔱 Red Bull: Fastest Pit Stop (1.82s)',
+    '⚡ DRS System: 370+ km/h boost',
     '🏅 Fernando Alonso: 32 Race Wins',
     '🎯 Sebastian Vettel: 4x World Champion'
   ];
-  const randomStats = stats.sort(() => Math.random() - 0.5).slice(0, 3);
-  console.log('%c🏁 F1 CHAMPIONSHIP STATS:', 'color: #FFD700; font-weight: bold; font-size: 14px;');
-  randomStats.forEach(s => console.log('%c' + s, 'color: #FFD700; font-size: 12px;'));
+  const randomStats = stats.sort(() => Math.random() - 0.5).slice(0, 3).join('<br>');
+  showModal('🏁 F1 Championship Stats', `<p>${randomStats}</p>`);
+  console.log('%c🏁 F1 STATS:', 'color: #FFD700; font-weight: bold; font-size: 14px;');
 });
 
-// Welcome message
 console.log('%c🚀 Welcome to Ruhulalemeen Mulla\'s Portfolio!', 'color: #64ffda; font-size: 20px; font-weight: bold;');
 console.log('%c✨ Easter Eggs: G+R+I+D (AI Lab) | M+O+N+A+C+O (F1) | T+Y+P+E (Typing) | C+H+A+M+P+I+O+N (Stats)', 'color: #8892b0; font-size: 12px;');
