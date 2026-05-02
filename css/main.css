@@ -110,11 +110,17 @@ padding: 40px;
 
 /* Projects Grid - Centered */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    justify-items: center;
+}
+.projects-grid > .project-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto; /* Extra guarantee for centering */
 }
 
 /* Skills Grid - Centered */
