@@ -1,319 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruhulalemeen Mulla | Portfolio</title>
-    <link rel="stylesheet" href="css/main.css?v=3">
-    <link rel="stylesheet" href="css/animations.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Ruhulalemeen Mulla | Systems Engineer & Founder</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <!-- Particles Background -->
-    <canvas id="particles"></canvas>
-
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
+            <a href="#home" class="logo">R—M</a>
             
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-groups">
+                <div class="nav-group">
+                    <span class="nav-group-title">Repositories</span>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Systems</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-title">Narrative</span>
+                    <a href="#about">About</a>
+                    <a href="#contact">Connect</a>
+                </div>
+            </div>
+            
+            <div class="nav-meta">
+                <div class="nav-time" id="local-time">00 : 00 <span style="font-size: 0.6rem; color: #888;">IST</span></div>
+                <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="glitch" data-text="Ruhulalemeen Mulla">Ruhulalemeen Mulla</h1>
-            <p class="tagline" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">Engineering 0→1 products and AI infrastructure, bridging backend systems, offensive security, and rapid product growth.</p>
-            <p class="subtitle" style="margin-top: 1rem;">Systems Builder & Founder | AI Infrastructure, Backend & Growth</p>
-            <div class="cta-buttons">
-                <a href="#experience" class="btn-primary">View Experience</a>
-                <a href="#contact" class="btn-secondary">Get in Touch</a>
+        <div class="hero-center">
+            <h1 class="hero-graphic reveal">
+                <span class="letter">R</span><span class="line"></span><span class="letter">M</span>
+            </h1>
+        </div>
+        
+        <div class="container hero-footer reveal">
+            <a href="#contact" class="btn-outline">Get in touch &rarr;</a>
+            <div class="hero-meta">
+                Software Engineer • AI/ML • Systems • 2022—Present
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="mouse"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-label">About</div>
+            
+            <div class="about-grid">
+                <div>
+                    <h2 class="huge-text reveal">Systems.<br>Engineer.<br>Founder.</h2>
+                    
+                    <div class="metrics-grid reveal">
+                        <div class="metric-item">
+                            <div class="number">2</div>
+                            <div class="label">Startups Built</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="number">0&rarr;1</div>
+                            <div class="label">Systems Shipped</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="number">4</div>
+                            <div class="label">Core Stack</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text reveal">
+                    <div class="section-label" style="justify-content: center; margin-bottom: 3rem;">
+                        <span style="letter-spacing: -1px;">=</span>
+                    </div>
+                    
+                    <p>Building from zero. I engineer intelligent systems and operate at the intersection of AI infrastructure, distributed systems, and rapid product growth. Not a claim — a pattern you'll see in the commits.</p>
+                    
+                    <p>Deep into AI safety infrastructure right now — architecting <span class="highlight-link">Evalyze Labs</span>, a developer-first platform for automated LLM red-teaming. Designing systems to programmatically simulate adversarial prompts and edge-case failure models. Also built a low-latency tabletop engine at <span class="highlight-link">Roomroll</span>.</p>
+                    
+                    <div class="tags-container">
+                        <span class="tag-pill">AI / ML Infrastructure</span>
+                        <span class="tag-pill">Backend Architecture</span>
+                        <span class="tag-pill">Node.js / Rust</span>
+                        <span class="tag-pill">Python</span>
+                        <span class="tag-pill">Distributed Systems</span>
+                        <span class="tag-pill">Data Engineering</span>
+                    </div>
+                    
+                    <a href="#contact" class="arrow-link">Get in touch &rarr;</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section-padding" style="background-color: var(--bg-card);">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-grid" style="display: grid; gap: 2rem; margin-top: 2rem;">
-                <div class="experience-card" style="background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 8px; padding: 2rem;">
-                    <h3 style="color: #64ffda; margin-bottom: 0.5rem;">Evalyze Labs <span style="color: #ccd6f6; font-weight: 400;">| Co-Founder & CEO</span></h3>
-                    <span style="color: #8892b0; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Mar 2026 – Present</span>
-                    <ul style="color: #8892b0; padding-left: 1.2rem; line-height: 1.6;">
-                        <li>Architecting a developer-first platform for automated LLM red-teaming and vulnerability detection.</li>
-                        <li>Designing infrastructure to programmatically simulate adversarial prompts, jailbreaks, and edge-case failure models.</li>
-                        <li>Driving core product direction and backend architecture for offensive AI safety tooling.</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-card" style="background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 8px; padding: 2rem;">
-                    <h3 style="color: #64ffda; margin-bottom: 0.5rem;">SH1P <span style="color: #ccd6f6; font-weight: 400;">| Product & Growth</span></h3>
-                    <span style="color: #8892b0; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Apr 2026 – Present</span>
-                    <ul style="color: #8892b0; padding-left: 1.2rem; line-height: 1.6;">
-                        <li>Deploying high-velocity product experiments to optimize core growth and retention loops.</li>
-                        <li>Leveraging behavioral analytics to identify funnel drop-offs, shipping direct friction-reduction improvements to the onboarding flow.</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-card" style="background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 8px; padding: 2rem;">
-                    <h3 style="color: #64ffda; margin-bottom: 0.5rem;">Roomroll <span style="color: #ccd6f6; font-weight: 400;">| Founder</span></h3>
-                    <span style="color: #8892b0; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Jan 2026 – Present</span>
-                    <ul style="color: #8892b0; padding-left: 1.2rem; line-height: 1.6;">
-                        <li>Bootstrapped a browser-based tabletop platform from 0 to live prototype, leading end-to-end engineering and product execution.</li>
-                        <li>Engineered a low-latency multiplayer architecture handling real-time synchronization, deterministic session state management, and concurrent lobbies.</li>
-                    </ul>
+            <div class="experience-header reveal">
+                <h2 class="huge-text" style="font-size: clamp(3rem, 6vw, 4.5rem);">Experience</h2>
+                <div class="section-label" style="margin: 0;"><span style="letter-spacing: -1px;">=</span></div>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
+                            <img src="assets/images/evalyze-logo.jpg" alt="Evalyze Labs" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                        </div>
+                        <div class="exp-title">
+                            <h3>Co-Founder & CEO</h3>
+                            <span>Evalyze Labs</span>
+                        </div>
+                    </div>
+                    <div class="exp-date">Mar 2026 — Present</div>
+                    <p class="exp-desc">Architecting a developer-first platform for automated LLM red-teaming and vulnerability detection. Driving core backend architecture for offensive AI safety tooling.</p>
+                    <a href="#" class="exp-link">VIEW &rarr;</a>
                 </div>
 
-                <div class="experience-card" style="background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 8px; padding: 2rem;">
-                    <h3 style="color: #64ffda; margin-bottom: 0.5rem;">Mentiora <span style="color: #ccd6f6; font-weight: 400;">| Software Engineer (Prev. SWE Intern)</span></h3>
-                    <span style="color: #8892b0; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Dec 2025 – Present</span>
-                    <ul style="color: #8892b0; padding-left: 1.2rem; line-height: 1.6;">
-                        <li>Progressed from intern to autonomous execution, shipping production-critical features across the Next.js/React stack.</li>
-                        <li>Architected modular, highly reusable component systems, structurally reducing technical debt and accelerating the team’s feature release velocity.</li>
-                    </ul>
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
+                            <img src="assets/images/sh1p-logo.jpg" alt="SH1P" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                        </div>
+                        <div class="exp-title">
+                            <h3>Product & Growth</h3>
+                            <span>SH1P</span>
+                        </div>
+                    </div>
+                    <div class="exp-date">Apr 2026 — Present</div>
+                    <p class="exp-desc">Deploying high-velocity product experiments to optimize core growth loops. Leveraging behavioral analytics to ship direct friction-reduction improvements.</p>
+                    <a href="#" class="exp-link">VIEW &rarr;</a>
                 </div>
 
-                <div class="experience-card" style="background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 8px; padding: 2rem;">
-                    <h3 style="color: #64ffda; margin-bottom: 0.5rem;">Open Source Systems & Infrastructure <span style="color: #ccd6f6; font-weight: 400;">| Contributor</span></h3>
-                    <span style="color: #8892b0; font-size: 0.9rem; display: block; margin-bottom: 1rem;">Nov 2025 – Present</span>
-                    <ul style="color: #8892b0; padding-left: 1.2rem; line-height: 1.6;">
-                        <li><strong>LinkedIn Cruise Control (Java):</strong> Engineered optimizations for Apache Kafka cluster rebalancing; multiple PRs merged directly into LinkedIn’s production repository.</li>
-                        <li><strong>adk-go (Go):</strong> Core contributor to Go-native AI agent tooling, focusing on system-level performance and execution reliability.</li>
-                        <li><strong>Observer Patch Holography:</strong> Developing computational simulations modeling complex theoretical physics and quantum gravity systems.</li>
-                    </ul>
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
+                            <img src="assets/images/roomroll-logo.jpg" alt="Roomroll" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                        </div>
+                        <div class="exp-title">
+                            <h3>Founder</h3>
+                            <span>Roomroll</span>
+                        </div>
+                    </div>
+                    <div class="exp-date">Jan 2026 — Present</div>
+                    <p class="exp-desc">Bootstrapped a browser-based tabletop platform. Engineered a low-latency multiplayer architecture handling real-time synchronization and concurrent lobbies.</p>
+                    <a href="#" class="exp-link">VIEW &rarr;</a>
+                </div>
+
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
+                            <img src="assets/images/mentiora-logo.jpg" alt="Mentiora" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                        </div>
+                        <div class="exp-title">
+                            <h3>Software Engineer</h3>
+                            <span>Mentiora</span>
+                        </div>
+                    </div>
+                    <div class="exp-date">Dec 2025 — Present</div>
+                    <p class="exp-desc">Architected modular component systems across the Next.js/React stack, structurally reducing technical debt and accelerating feature release velocity.</p>
+                    <a href="#" class="exp-link">VIEW &rarr;</a>
+                </div>
+
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
+                            <img src="assets/images/github-logo.jpg" alt="GitHub" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                        </div>
+                        <div class="exp-title">
+                            <h3>Core Contributor</h3>
+                            <span>Open Source Systems</span>
+                        </div>
+                    </div>
+                    <div class="exp-date">Nov 2025 — Present</div>
+                    <p class="exp-desc">Engineered Kafka optimizations merged into LinkedIn's repo. Core contributor to adk-go for AI agent tooling focusing on system-level performance.</p>
+                    <a href="#" class="exp-link">VIEW &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Projects & Systems</h2>
-
-            <h3 style="color: #ccd6f6; margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">AI Systems & Applied ML</h3>
-            <div class="projects-grid">
-                <div class="project-card" style="padding: 2rem; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.1);">
-                    <div class="project-info" style="padding: 0;">
-                        <h3>DeepDive</h3>
-                        <p style="margin-top: 1rem;">Architected an adaptive AI-driven learning engine (backed by a published research paper) utilizing dynamic knowledge retrieval and retention modeling.</p>
-                        <div class="project-tech" style="margin-top: 1.5rem;">
-                            <span>AI Models</span>
-                            <span>Research</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" style="padding: 2rem; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.1);">
-                    <div class="project-info" style="padding: 0;">
-                        <h3>Predictive ML Pipelines</h3>
-                        <p style="margin-top: 1rem;">Engineered robust statistical simulation and recommendation systems (F1, Premier League, Movies) using Python and R to model and predict complex real-world data distributions.</p>
-                        <div class="project-tech" style="margin-top: 1.5rem;">
-                            <span>Python</span>
-                            <span>R</span>
-                            <span>Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="experience-header reveal" style="margin-bottom: 2rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 500;">Systems & Repositories</h2>
+                <div class="section-label" style="margin: 0;"><span style="letter-spacing: -1px;">=</span></div>
             </div>
-
-            <h3 style="color: #ccd6f6; margin-top: 4rem; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">Developer Tools & Systems</h3>
-            <div class="projects-grid">
-                <div class="project-card" style="padding: 2rem; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.1);">
-                    <div class="project-info" style="padding: 0;">
-                        <h3>Forge</h3>
-                        <p style="margin-top: 1rem;">Built a high-performance terminal workspace using Node.js and Rust, integrating a natural language interface with strict, low-level system execution constraints.</p>
-                        <div class="project-tech" style="margin-top: 1.5rem;">
-                            <span>Node.js</span>
-                            <span>Rust</span>
-                            <span>CLI Systems</span>
-                        </div>
+            
+            <div class="notes-list">
+                <div class="note-item reveal">
+                    <div class="note-plus">+</div>
+                    <div class="note-content">
+                        <h3>DeepDive: Adaptive AI-driven learning engine</h3>
+                        <p>Architected a system utilizing dynamic knowledge retrieval and retention modeling. Backed by a published research paper.</p>
+                        <div class="note-meta">Python • AI Models • Research</div>
                     </div>
-                </div>
-            </div>
-
-            <h3 style="color: #ccd6f6; margin-top: 4rem; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">Real-World Product Applications</h3>
-            <div class="projects-grid">
-                <div class="project-card" style="padding: 2rem; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.1);">
-                    <div class="project-info" style="padding: 0;">
-                        <h3>World Monitor</h3>
-                        <p style="margin-top: 1rem;">Developed a low-latency geopolitical intelligence dashboard built to aggregate, normalize, and visualize live global data streams.</p>
-                        <div class="project-tech" style="margin-top: 1.5rem;">
-                            <span>Data Engineering</span>
-                            <span>Web Sockets</span>
-                            <span>Dashboard</span>
-                        </div>
-                    </div>
+                    <div class="note-arrow">&rarr;</div>
                 </div>
 
-                <div class="project-card" style="padding: 2rem; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(100, 255, 218, 0.1);">
-                    <div class="project-info" style="padding: 0;">
-                        <h3>Medication Manager</h3>
-                        <p style="margin-top: 1rem;">Designed a fault-tolerant backend architecture for tracking critical health data, prioritizing strict API reliability and data integrity.</p>
-                        <div class="project-tech" style="margin-top: 1.5rem;">
-                            <span>Backend Architecture</span>
-                            <span>Flutter</span>
-                            <span>API Design</span>
-                        </div>
+                <div class="note-item reveal">
+                    <div class="note-plus">+</div>
+                    <div class="note-content">
+                        <h3>Predictive ML Pipelines for complex data distributions</h3>
+                        <p>Engineered robust statistical simulation and recommendation systems (F1, Premier League) using Python and R to model real-world data.</p>
+                        <div class="note-meta">Python • R • Machine Learning</div>
                     </div>
+                    <div class="note-arrow">&rarr;</div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title">Tech Stack</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">Java</span>
+                <div class="note-item reveal">
+                    <div class="note-plus">+</div>
+                    <div class="note-content">
+                        <h3>Forge: High-performance terminal workspace</h3>
+                        <p>Built using Node.js and Rust, integrating a natural language interface with strict, low-level system execution constraints.</p>
+                        <div class="note-meta">Node.js • Rust • CLI Systems</div>
                     </div>
+                    <div class="note-arrow">&rarr;</div>
                 </div>
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">Next.js</span>
-                        <span class="skill-item">Tailwind CSS</span>
-                        <span class="skill-item">Flutter</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend & AI</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">TensorFlow</span>
-                        <span class="skill-item">PyTorch</span>
-                        <span class="skill-item">Firebase</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">VS Code</span>
-                        <span class="skill-item">Figma</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="highlight">I am an early-stage founder and systems engineer bridging AI, infrastructure, and product growth.</p>
-                    <p>My focus is on engineering 0→1 products and AI safety infrastructure. From bootstrapping browser-based multiplayer architectures to architecting developer-first LLM red-teaming platforms, I thrive on solving complex system design challenges.</p>
-                    <p>I operate with a builder mindset—shipping real systems, not just theory. Outside of engineering, I'm involved in technical community leadership and building robust data pipelines.</p>
-                    <div class="achievements">
-                        <div class="achievement-item">
-                            <span class="achievement-number">Founder</span>
-                            <span class="achievement-label">Evalyze Labs & Roomroll</span>
-                        </div>
-                        <div class="achievement-item">
-                            <span class="achievement-number">0→1</span>
-                            <span class="achievement-label">Systems Built</span>
-                        </div>
-                        <div class="achievement-item">
-                            <span class="achievement-number">MS</span>
-                            <span class="achievement-label">Ambassador</span>
-                        </div>
+                <div class="note-item reveal">
+                    <div class="note-plus">+</div>
+                    <div class="note-content">
+                        <h3>World Monitor: Low-latency geopolitical dashboard</h3>
+                        <p>Developed a real-time intelligence dashboard built to aggregate, normalize, and visualize live global data streams via web sockets.</p>
+                        <div class="note-meta">Data Engineering • Web Sockets</div>
                     </div>
+                    <div class="note-arrow">&rarr;</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <p class="contact-intro">Interested in collaborating or just want to say hi? Drop me a message!</p>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
+            <div class="section-label">Let's build something</div>
+            
+            <div class="contact-grid">
+                <div class="contact-left reveal">
+                    <h2>Start<br>collaboration</h2>
+                    <span class="arrow">&rarr;</span>
+                </div>
+                
+                <div class="contact-columns reveal">
+                    <div class="contact-group">
+                        <h4>Direct</h4>
+                        <a href="mailto:ruhanmulla07@gmail.com" class="contact-link">
+                            ruhanmulla07@gmail.com <span class="slash">&rarr;</span>
+                        </a>
                     </div>
-                    <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-                <div class="social-links">
-                    <a href="https://github.com/MRuhan17" target="_blank" class="social-link">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ruhulalemeen-mulla" target="_blank" class="social-link">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="mailto:ruhanmulla07@gmail.com" class="social-link">
-                        <span>Email</span>
-                    </a>
+                    
+                    <div class="contact-group">
+                        <h4>Social</h4>
+                        <a href="https://github.com/MRuhan17" target="_blank" class="contact-link">
+                            GitHub @MRuhan17 <span class="slash">/</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ruhulalemeen-mulla" target="_blank" class="contact-link">
+                            LinkedIn @ruhulalemeen <span class="slash">/</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            Resume Download <span class="slash">/</span>
+                        </a>
+                    </div>
+                    
+                    <div class="contact-group">
+                        <h4>Availability</h4>
+                        <div class="contact-link" style="border: none; cursor: default;">
+                            <span style="display: flex; align-items: center; gap: 0.5rem; color: #10b981; font-size: 0.85rem;"><span class="dot-green"></span> Open for projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">R—M</div>
+                <div>&copy; 2026 Ruhulalemeen Mulla. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="https://github.com/MRuhan17">GitHub /</a>
+                    <a href="https://www.linkedin.com/in/ruhulalemeen-mulla">LinkedIn /</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Ruhulalemeen Mulla. Built with passion and curiosity.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/particles.js"></script>
+    <!-- Script -->
     <script src="js/main.js"></script>
-
-    <!-- Easter Egg Overlays -->
-    <!-- AI Lab Overlay -->
-    <div id="ai-lab-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px); z-index: 9999; flex: 1; align-items: center; justify-content: center;">
-        <div style="max-width: 480px; width: 90%; background: rgba(10, 10, 10, 0.9); border-radius: 16px; padding: 24px; border: 1px solid rgba(100, 255, 218, 0.5); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); color: #ffffff; font-family: 'Inter'; text-align: center;">
-            <button onclick="closeOverlay('ai-lab-overlay')" style="position: absolute; top: 10px; right: 14px; background: transparent; border: none; color: #ffffff; font-size: 1.4rem; cursor: pointer;">×</button>
-            <h2 style="margin-top: 0; margin-bottom: 8px; font-size: 1.6rem; color: #ffffff;">🧪 AI Lab Unlocked</h2>
-            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0;">You found the hidden lab. This is where experimental AI research happens.</p>
-        </div>
-    </div>
-
-    <!-- F1 Monaco Overlay -->
-    <div id="f1-overlay" style="display: none; position: fixed; inset: 0; background: linear-gradient(135deg, #ff0000 0%, #000000 100%); z-index: 9999;">
-        <div style="max-width: 480px; width: 90%; background: rgba(0, 0, 0, 0.95); border-radius: 8px; padding: 24px; border: 3px solid #ff0000; box-shadow: 0 20px 50px rgba(255, 0, 0, 0.3); color: #ffffff; font-family: 'Inter'; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <button onclick="closeOverlay('f1-overlay')" style="position: absolute; top: 10px; right: 14px; background: transparent; border: none; color: #ffffff; font-size: 1.4rem; cursor: pointer;">×</button>
-            <h2 style="margin-top: 0; font-size: 1.8rem; color: #ff0000; text-shadow: 0 0 10px #ff0000;">🏎️ MONACO GRAND PRIX</h2>
-            <p style="font-size: 1rem; margin: 8px 0;">Welcome to the legendary F1 circuit!</p>
-        </div>
-    </div>
-
-    <!-- Typing Challenge Overlay -->
-    <div id="typing-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); z-index: 9999;">
-        <div style="max-width: 480px; width: 90%; background: rgba(10, 10, 10, 0.9); border-radius: 16px; padding: 24px; border: 1px solid rgba(0, 255, 0, 0.5); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); color: #ffffff; font-family: 'Inter'; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <button onclick="closeOverlay('typing-overlay')" style="position: absolute; top: 10px; right: 14px; background: transparent; border: none; color: #ffffff; font-size: 1.4rem; cursor: pointer;">×</button>
-            <h2 style="margin-top: 0; margin-bottom: 8px; font-size: 1.6rem; color: #00ff00;">⌨️ Typing Challenge Unlocked</h2>
-            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0;">Test your typing speed! A feature for competitive programmers.</p>
-        </div>
-    </div>
-    <script src="js/main.js?v=2.0"></script>
+    <script>
+        // Clock script specific to this design
+        function updateClock() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit' };
+            const timeString = now.toLocaleTimeString('en-US', options).replace(':', ' : ');
+            document.getElementById('local-time').innerHTML = timeString + ' <span style="font-size: 0.6rem; color: #888;">IST</span>';
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
