@@ -27,6 +27,41 @@ document.addEventListener('DOMContentLoaded', () => {
   doi={10.5281/zenodo.20631345},
   url={https://zenodo.org/records/20631345}
 }`
+        },
+        {
+            id: "agentshield-bench-2026",
+            title: "AgentShield Bench: Evaluating the Security Resilience of OpenAI and Gemini LLM Agents Against Adversarial Agent Workflows",
+            authors: "Ruhulalemeen Mulla",
+            year: 2026,
+            type: "Research Paper",
+            venue: "Zenodo",
+            doi: "10.5281/zenodo.20677149",
+            featured: false,
+            status: "Published",
+            url: "https://zenodo.org/records/20677149",
+            tags: [
+                "AI Security",
+                "LLM Security",
+                "Agent Security",
+                "Prompt Injection",
+                "Benchmark Dataset",
+                "Adversarial AI",
+                "Autonomous Agents",
+                "RAG Security",
+                "Retrieval Poisoning",
+                "Memory Manipulation",
+                "Cybersecurity",
+                "Large Language Models"
+            ],
+            abstract: "AgentShield Bench is a security benchmarking framework designed to evaluate the resilience of Large Language Model (LLM) agents against adversarial workflows. This work introduces a benchmark dataset containing 130 security-focused attack scenarios spanning prompt injection, role override, tool misuse, multi-turn manipulation, retrieval poisoning, memory manipulation, data exfiltration, and goal hijacking attacks.\n\nThe accompanying research paper presents the design of the AgentShield Bench framework, the AgentShield Security Score (ASSS), and an empirical evaluation of modern LLM agents under adversarial conditions. The benchmark aims to provide a reproducible methodology for assessing agent security beyond traditional conversational safety evaluations.\n\nThis release includes:\n• Research paper: \"AgentShield Bench: Evaluating the Security Resilience of OpenAI and Gemini LLM Agents Against Adversarial Agent Workflows\"\n• AgentShield Bench attack dataset (130 benchmark scenarios)\n\nThe dataset and paper are released to support reproducible research in AI security, agent safety, prompt injection resilience, retrieval-augmented generation security, and autonomous agent evaluation.",
+            bibtex: `@article{mulla2026agentshield,
+  title={AgentShield Bench: Evaluating the Security Resilience of OpenAI and Gemini LLM Agents Against Adversarial Agent Workflows},
+  author={Mulla, Ruhulalemeen},
+  journal={Zenodo},
+  year={2026},
+  doi={10.5281/zenodo.20677149},
+  url={https://zenodo.org/records/20677149}
+}`
         }
     ];
 
@@ -161,10 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const tagsHTML = pub.tags.map(tag => `<span class="tag-pill mini-tag">${tag}</span>`).join('');
             
             return `
-                <div class="pub-card reveal active ${pub.featured ? 'featured' : ''}" id="${pub.id}">
+                <div class="pub-card reveal active" id="${pub.id}">
                     <div class="pub-card-header">
                         <div class="pub-badges">
-                            ${pub.featured ? '<span class="badge featured-badge">★ Featured</span>' : ''}
                             <span class="badge type-badge">${pub.type}</span>
                             <span class="badge status-badge ${pub.status.toLowerCase()}">${pub.status}</span>
                         </div>
