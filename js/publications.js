@@ -62,6 +62,41 @@ document.addEventListener('DOMContentLoaded', () => {
   doi={10.5281/zenodo.20677149},
   url={https://zenodo.org/records/20677149}
 }`
+        },
+        {
+            id: "agentshield-bench-v2-2026",
+            title: "AgentShield Bench v2: Evaluating Memory Security, Persistent Jailbreaks, and Cross Session Compromise in Autonomous LLM Agents",
+            authors: "Ruhulalemeen Mulla",
+            year: 2026,
+            type: "Research Paper",
+            venue: "Zenodo",
+            doi: "10.5281/zenodo.20756086",
+            featured: false,
+            status: "Published",
+            url: "https://zenodo.org/records/20756086",
+            tags: [
+                "Large Language Models",
+                "Autonomous AI Agents",
+                "Agent Security",
+                "Memory Security",
+                "Memory Poisoning",
+                "Persistent Jailbreaks",
+                "Cross-Session Compromise",
+                "Adversarial Machine Learning",
+                "AI Safety",
+                "Benchmarking",
+                "AgentShield Bench",
+                "Behavioral Compromise Rate"
+            ],
+            abstract: "AgentShield Bench v2 is a benchmark framework for evaluating persistent memory security vulnerabilities in autonomous Large Language Model (LLM) agents.\n\nUnlike traditional AI security benchmarks that primarily focus on prompt injection and single-session adversarial attacks, AgentShield Bench v2 investigates how malicious information can be stored in long-term memory, persist across conversational boundaries, and influence future agent behavior.\n\nThe benchmark introduces a dataset of 320 memory-security attack scenarios spanning eight threat categories: False Memory Injection, Memory Corruption, Persistent Jailbreaks, Goal Manipulation, Privilege Escalation, Cross-Session Persistence, Trust Exploitation, and Recovery Evaluation.\n\nAgentShield Bench v2 proposes a memory-focused evaluation methodology based on five metrics:\nMemory Integrity Score (MIS)\nPersistence Score (PS)\nBehavioral Compromise Rate (BCR)\nRecovery Effectiveness Score (RES)\nMemory Security Score (MSS)\n\nExperimental evaluation was conducted using GPT-4o-mini and Llama-3.1-8B-Instant, providing comparative analysis of memory poisoning resilience, defense effectiveness, and cross-session compromise behavior.\n\nA key finding of this work is the identification of the Key Mismatch Gap, an evaluation phenomenon in which behavioral compromise can occur despite memory-integrity metrics reporting near-perfect security. This highlights the limitations of exact-match memory evaluation techniques and motivates future research into semantic memory-security assessment.\n\nThis release contains the research paper associated with AgentShield Bench v2 and serves as a citable technical report from Evalyze Labs.",
+            bibtex: `@article{mulla2026agentshieldv2,
+  title={AgentShield Bench v2: Evaluating Memory Security, Persistent Jailbreaks, and Cross Session Compromise in Autonomous LLM Agents},
+  author={Mulla, Ruhulalemeen},
+  journal={Zenodo},
+  year={2026},
+  doi={10.5281/zenodo.20756086},
+  url={https://zenodo.org/records/20756086}
+}`
         }
     ];
 
