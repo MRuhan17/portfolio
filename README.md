@@ -1,4 +1,4 @@
-# 🚀 Ruhulalemeen Mulla | Portfolio Website
+# Ruhulalemeen Mulla | Portfolio Website
 
 <div align="center">
 
