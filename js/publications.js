@@ -97,6 +97,41 @@ document.addEventListener('DOMContentLoaded', () => {
   doi={10.5281/zenodo.20756086},
   url={https://zenodo.org/records/20756086}
 }`
+        },
+        {
+            id: "agentshield-bench-v3-2026",
+            title: "AgentShield Bench v3: Evaluating Goal Integrity and Resilience of Autonomous LLM Agents Against Goal Hijacking and Autonomous Threats",
+            authors: "Ruhulalemeen Mulla",
+            year: 2026,
+            type: "Preprint",
+            venue: "Zenodo",
+            doi: "10.5281/zenodo.20834892",
+            featured: false,
+            status: "Published",
+            url: "https://zenodo.org/records/20834892",
+            tags: [
+                "Large Language Models",
+                "Autonomous AI Agents",
+                "Agent Security",
+                "Goal Integrity",
+                "Goal Hijacking",
+                "Reward Hacking",
+                "Autonomous Threats",
+                "Adversarial Machine Learning",
+                "AI Safety",
+                "Benchmarking",
+                "Agent Evaluation",
+                "Goal Preservation"
+            ],
+            abstract: "AgentShield Bench v3 is a benchmark framework for evaluating goal integrity, objective preservation, and resilience against adversarial influence in autonomous Large Language Model (LLM) agents. The benchmark contains 250 controlled experimental scenarios spanning Goal Drift, Tool Manipulation, Long-Horizon Hijacking, Delegation Attacks, and Reward Hacking. It introduces Goal Integrity Score (GIS), Goal Integrity Drop (GID), Attack Success Rate (ASR), and Task Completion Rate (TCR) as dedicated metrics for measuring objective-preservation failures. Experimental evaluation was conducted using GPT-4o and GPT-OSS-120B under multiple defense configurations. The benchmark identifies the Defensive Overhead Paradox, where defensive interventions improve robustness while simultaneously reducing clean-condition performance.",
+            bibtex: `@article{mulla2026agentshieldv3,
+  title={AgentShield Bench v3: Evaluating Goal Integrity and Resilience of Autonomous LLM Agents Against Goal Hijacking and Autonomous Threats},
+  author={Mulla, Ruhulalemeen},
+  journal={Zenodo},
+  year={2026},
+  doi={10.5281/zenodo.20834892},
+  url={https://zenodo.org/records/20834892}
+}`
         }
     ];
 
