@@ -3,597 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruhulalemeen Mulla | Systems Engineer & Founder</title>
+    <title>Ruhulalemeen Mulla | AI Research & Systems Engineering</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Floating Cursor-Following Character (Tiny Astronaut) -->
+    <div id="cursor-companion" aria-hidden="true">
+        <svg class="astronaut-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tiny Minimalist Astronaut Silhouette -->
+            <path d="M18 4C13.5817 4 10 7.58172 10 12V18C10 22.4183 13.5817 26 18 26C22.4183 26 26 22.4183 26 18V12C26 7.58172 22.4183 4 18 4Z" fill="#E4E4E7" stroke="#18181B" stroke-width="1.5"/>
+            <!-- Visor -->
+            <path d="M13 11C13 9.34315 15.2386 8 18 8C20.7614 8 23 9.34315 23 11V14C23 15.6569 20.7614 17 18 17C15.2386 17 13 15.6569 13 14V11Z" fill="#18181B"/>
+            <path d="M15 10.5C15 10.5 16.5 9.5 18.5 9.5" stroke="#3F3F46" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Backpack & Antenna -->
+            <rect x="7" y="11" width="3" height="10" rx="1.5" fill="#A1A1AA"/>
+            <rect x="26" y="11" width="3" height="10" rx="1.5" fill="#A1A1AA"/>
+            <path d="M18 4V1" stroke="#E4E4E7" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="1" r="1.5" fill="#10B981"/>
+            <!-- Chest emblem -->
+            <circle cx="18" cy="21" r="1.2" fill="#E11D48"/>
+        </svg>
+    </div>
+
+    <!-- Top Fixed Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">R—M</a>
+            <a href="#home" class="logo">
+                Ruhulalemeen <span>/ Portfolio</span>
+            </a>
             
-            <div class="nav-groups">
-                <div class="nav-group">
-                    <span class="nav-group-title">Repositories</span>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Systems</a>
-                </div>
-                <div class="nav-group">
-                    <span class="nav-group-title">Narrative</span>
-                    <a href="#about">About</a>
-                    <a href="#publications">Publications</a>
-                    <a href="#contact">Connect</a>
-                </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            
-            <div class="nav-meta">
-                <div class="nav-time" id="local-time">00 : 00 <span style="font-size: 0.6rem; color: #888;">IST</span></div>
-                <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+
+            <div class="nav-controls">
+                <button class="search-shortcut-btn" title="Search">
+                    <span>⌘K</span>
+                </button>
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-center">
-            <h1 class="hero-graphic reveal">
-                <span class="letter">R</span><span class="line"></span><span class="letter">M</span>
-            </h1>
-        </div>
-        
-        <div class="container hero-footer reveal">
-            <a href="#contact" class="btn-outline">Get in touch &rarr;</a>
-            <div class="hero-meta">
-                Software Engineer • AI/ML • Systems • 2022—Present
-            </div>
-        </div>
-    </section>
+    <!-- 3-Column Editorial Grid Layout -->
+    <div class="editorial-layout">
+        <!-- Left Column: Visual Space & Guide Line -->
+        <div class="left-gutter"></div>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-label">About</div>
-            
-            <div class="about-grid">
-                <div>
-                    <h2 class="huge-text reveal">Systems.<br>Engineer.<br>Founder.</h2>
-                    
-                    <div class="metrics-grid reveal">
-                        <div class="metric-item">
-                            <div class="number">2</div>
-                            <div class="label">Startups Built</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="number">0&rarr;1</div>
-                            <div class="label">Systems Shipped</div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="number">4</div>
-                            <div class="label">Core Stack</div>
+        <!-- Center Column: Main Content -->
+        <main class="main-content">
+
+            <!-- Hero / Profile Section -->
+            <section id="home">
+                <!-- Panoramic Top Banner -->
+                <div class="hero-banner">
+                    <img src="assets/images/portfolio-hero-banner.png" alt="Abstract AI network and orbital system artwork" class="hero-banner-image">
+                </div>
+
+                <div class="hero-profile-row reveal">
+                    <div class="hero-info">
+                        <h1 class="hero-name">Ruhulalemeen Mulla</h1>
+                        <div class="hero-role">AI Security & Autonomous Agents Researcher • Systems Engineer</div>
+                        <div class="hero-meta-row">
+                            <span>📍 Hyderabad, India • Remote</span>
+                            <span class="status-badge"><span class="status-dot"></span> Open for collaboration</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="about-text reveal">
-                    <div class="section-label" style="justify-content: center; margin-bottom: 3rem;">
-                        <span style="letter-spacing: -1px;">=</span>
-                    </div>
-                    
-                    <p>Building from zero. I engineer intelligent systems and operate at the intersection of AI infrastructure, distributed systems, and rapid product growth. Not a claim — a pattern you'll see in the commits.</p>
-                    
-                    <p>Deep into AI safety infrastructure right now — architecting <span class="highlight-link">Evalyze Labs</span>, a developer-first platform for automated LLM red-teaming. Designing systems to programmatically simulate adversarial prompts and edge-case failure models. Also built a low-latency tabletop engine at <span class="highlight-link">Roomroll</span>.</p>
-                    
-                    <div class="tags-container">
-                        <span class="tag-pill">AI / ML Infrastructure</span>
-                        <span class="tag-pill">Backend Architecture</span>
-                        <span class="tag-pill">Node.js / Rust</span>
-                        <span class="tag-pill">Python</span>
-                        <span class="tag-pill">Distributed Systems</span>
-                        <span class="tag-pill">Data Engineering</span>
-                    </div>
-                    
-                    <a href="#contact" class="arrow-link">Get in touch &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section-padding" style="background-color: var(--bg-card);">
-        <div class="container">
-            <div class="experience-header reveal">
-                <h2 class="huge-text" style="font-size: clamp(3rem, 6vw, 4.5rem);">Experience</h2>
-                <div class="section-label" style="margin: 0;"><span style="letter-spacing: -1px;">=</span></div>
-            </div>
-            
-            <div class="experience-grid">
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/synk-logo.jpg" alt="SYNK" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Research Development Engineering Intern</h3>
-                            <span>SYNK • Internship</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Jul 2026 — Present</div>
-                    <ul class="exp-bullet-list">
-                        <li>Built scalable backend systems and APIs.</li>
-                        <li>Implemented and evaluated machine learning models.</li>
-                        <li>Designed experiments and analyzed results.</li>
-                        <li>Collaborated on research prototypes and production-ready software.</li>
-                    </ul>
-                    <div class="exp-skills-pill-container">
-                        <span class="skill-tag">Backend Systems</span>
-                        <span class="skill-tag">APIs</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Research Engineering</span>
-                    </div>
+                <p class="hero-bio reveal">
+                    Co-Founder & Research Lead at <strong>Evalyze Labs</strong>. I engineer intelligent systems and conduct security research focused on autonomous LLM agents, prompt injection vulnerabilities, memory security, and trustworthy machine learning infrastructure.
+                </p>
+
+                <!-- Profile Badges Row -->
+                <div class="hero-badges-row reveal">
+                    <a href="https://github.com/MRuhan17" target="_blank" class="badge-tile">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        GitHub ↗
+                    </a>
+                    <a href="https://www.linkedin.com/in/ruhulalemeen-mulla" target="_blank" class="badge-tile">
+                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        LinkedIn ↗
+                    </a>
+                    <a href="https://zenodo.org/communities/evalyze-labs/records?q=&l=list&p=1&s=10&sort=newest" target="_blank" class="badge-tile">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2"/></svg>
+                        Zenodo ↗
+                    </a>
+                    <a href="https://orcid.org/0009-0002-2510-2778" target="_blank" class="badge-tile">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-4.708 17.5H6v-11h1.292v11zm-.646-12.278c-.414 0-.75-.336-.75-.75s.336-.75.75-.75.75.336.75.75-.336.75-.75.75zm9.52 12.278h-2.125V14.12c0-1.077-.864-1.942-1.942-1.942H10.83v5.322H9.538v-11h2.585c2.316 0 4.192 1.876 4.192 4.192 0 1.543-.837 2.894-2.091 3.633v.01c1.246.738 2.083 2.094 2.083 3.637v1.85z"/></svg>
+                        ORCID ↗
+                    </a>
+                    <a href="mailto:ruhanmulla07@gmail.com" class="badge-tile">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Mail ↗
+                    </a>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- About Section -->
+            <section id="about">
+                <div class="section-header">
+                    <h2 class="section-title">About</h2>
+                    <span class="section-subtext">OVERVIEW & FOCUS</span>
                 </div>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/evalyze-logo.jpg" alt="Evalyze Labs" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Co-Founder & Research Lead</h3>
-                            <span>Evalyze Labs • Full-time</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Mar 2026 — Present • 4 mos</div>
-                    <ul class="exp-bullet-list">
-                        <li>Co-founded Evalyze Labs, an independent AI research lab focused on advancing the safety, reliability, and security of large language models and AI agents.</li>
-                        <li>Conducting research on adversarial prompting, jailbreak techniques, prompt injection attacks, and model failure modes to better understand real world AI risks.</li>
-                        <li>Developing evaluation frameworks, benchmarks, and experimental methodologies for assessing model robustness, safety, and agent behavior.</li>
-                        <li>Leading research initiatives, technical direction, and collaborations focused on AI safety, agent reliability, and trustworthy AI systems.</li>
-                    </ul>
-                    <div class="exp-skills-pill-container">
-                        <span class="skill-tag">Product Development</span>
-                        <span class="skill-tag">Offensive Security</span>
-                        <span class="skill-tag">AI Safety</span>
-                        <span class="skill-tag">Threat Modeling</span>
-                    </div>
+                <div class="hero-bio reveal">
+                    <p>Building from zero. I engineer intelligent systems and operate at the intersection of AI infrastructure, autonomous agent security, and distributed systems. Not a claim — a pattern you'll see in the research papers and commits.</p>
+                    <p style="margin-top: 1rem;">Deep into AI safety infrastructure right now — architecting <strong>Evalyze Labs</strong>, a research platform and evaluation benchmark suite for automated LLM red-teaming, adversarial agent workflows, and memory security. Also founded and shipped <strong>RoomRoll</strong> (acquired by Pied Piper).</p>
                 </div>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/flyrank-logo.jpg" alt="FlyRank AI" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Machine Learning Research Intern</h3>
-                            <span>FlyRank AI • Internship</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Jun 2026 — Present • 1 mo</div>
-                    <div class="exp-date" style="margin-top: -0.5rem; margin-bottom: 1rem; font-size: 0.7rem; color: var(--text-muted);">Remote</div>
-                    <p class="exp-desc">Machine Learning Intern at FlyRank AI, contributing to machine learning initiatives focused on AI driven search, ranking systems, and data driven optimization. Collaborating with the team to explore, develop, and evaluate ML solutions while gaining hands-on experience in applied artificial intelligence and large scale data systems.</p>
-                    <div class="exp-skills-pill-container">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">AI Search</span>
-                        <span class="skill-tag">Ranking Systems</span>
-                        <span class="skill-tag">Data Systems</span>
+                <!-- Developer Snapshot Card -->
+                <div class="snapshot-card reveal">
+                    <div class="snapshot-header">DEVELOPER SNAPSHOT</div>
+                    <div class="snapshot-grid">
+                        <div class="snapshot-item"><span class="dot">•</span> Building Evalyze Labs</div>
+                        <div class="snapshot-item"><span class="dot">•</span> AI Security & Agent Benchmarks</div>
+                        <div class="snapshot-item"><span class="dot">•</span> Shipping Scalable Systems</div>
+                        <div class="snapshot-item"><span class="dot">•</span> Open Source Contributor</div>
                     </div>
                 </div>
+            </section>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/isrm-logo.jpg" alt="International Student Research Mentorship (ISRM)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Research Mentor</h3>
-                            <span>International Student Research Mentorship (ISRM) • Mentorship</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Jun 2026 — Present</div>
-                    <ul class="exp-bullet-list">
-                        <li>Mentor a cohort of 7 students conducting research in Computer Science and Artificial Intelligence.</li>
-                        <li>Guide students through research problem formulation, literature review, research methodology, and scientific writing.</li>
-                        <li>Provide mentorship on Python, machine learning fundamentals, and research best practices to support student-led projects.</li>
-                        <li>Review research progress, provide technical feedback, and foster critical thinking and analytical problem-solving skills.</li>
-                    </ul>
-                    <div class="exp-skills-pill-container">
-                        <span class="skill-tag">Computer Science</span>
-                        <span class="skill-tag">Artificial Intelligence</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Research Methodology</span>
-                    </div>
+            <div class="section-divider"></div>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <div class="section-header">
+                    <h2 class="section-title">Projects</h2>
+                    <span class="section-subtext">SYSTEMS & REPOSITORIES</span>
                 </div>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/microsoft-logo.jpg" alt="Microsoft" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Microsoft Student Ambassador</h3>
-                            <span>Microsoft • Full-time</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Nov 2025 — Present • 8 mos</div>
-                    <div class="exp-date" style="margin-top: -0.5rem; margin-bottom: 1rem; font-size: 0.7rem; color: var(--text-muted);">Hyderabad, Telangana, India • Remote</div>
-                    <ul class="exp-bullet-list">
-                        <li>Selected as Microsoft Student Ambassador representing student tech communities.</li>
-                        <li>Hosted sessions on Microsoft Learn, cloud technologies, and developer tools.</li>
-                        <li>Engaged with global ambassador network and contributed to community-driven initiatives.</li>
-                    </ul>
+                <div class="project-filters reveal">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="ai">AI & Security</button>
+                    <button class="filter-btn" data-filter="systems">Systems & Web</button>
                 </div>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/mentiora-logo.jpg" alt="Mentiora" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Mentiora</h3>
-                            <span>9 mos</span>
-                        </div>
-                    </div>
-                    
-                    <div class="exp-subroles">
-                        <div class="exp-subrole">
-                            <div class="exp-subrole-header">
-                                <h4 class="exp-subrole-title">Software Engineer <span class="exp-subrole-type">Full-Time</span></h4>
-                                <div class="exp-date">Apr 2026 — Jun 2026 • 3 mos</div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card reveal" data-category="ai">
+                        <div class="project-card-header">
+                            <div class="project-badges">
+                                <span class="status-pill live">● LIVE</span>
+                                <span class="status-pill featured">FEATURED</span>
                             </div>
-                            <div class="exp-date" style="margin-top: -0.5rem; margin-bottom: 0.8rem; font-size: 0.7rem; color: var(--text-muted);">Remote</div>
-                            <ul class="exp-bullet-list">
-                                <li>Shipped multiple user-facing features using Next.js and React, improving user experience and product functionality.</li>
-                                <li>Designed and optimized reusable UI components, reducing development time and enabling faster feature rollouts.</li>
-                                <li>Actively contributed to debugging, performance optimization, and feature iteration alongside senior engineers.</li>
-                            </ul>
+                            <span class="project-year">2026</span>
                         </div>
-                        
-                        <div class="exp-subrole">
-                            <div class="exp-subrole-header">
-                                <h4 class="exp-subrole-title">Software Engineering Intern <span class="exp-subrole-type">Internship</span></h4>
-                                <div class="exp-date">Oct 2025 — Mar 2026 • 6 mos</div>
-                            </div>
-                            <ul class="exp-bullet-list">
-                                <li>Contributing to production features using Next.js and React.</li>
-                                <li>Building and improving user-facing components used by real users.</li>
-                                <li>Writing and testing scalable frontend logic in a startup environment.</li>
-                                <li>Collaborating with engineers on feature iteration and bug fixes.</li>
-                            </ul>
+                        <h3 class="project-title">Evalyze Labs / AgentShield Bench</h3>
+                        <p class="project-desc">Evaluation benchmark suite testing persistent memory security, prompt injection resilience, and cross-session compromise in autonomous LLM agents.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">AI Security</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://zenodo.org/communities/evalyze-labs" target="_blank" class="project-link">Zenodo Benchmark ↗</a>
+                            <a href="https://github.com/MRuhan17" target="_blank" class="project-link">GitHub ↗</a>
                         </div>
                     </div>
-                    <div class="exp-skills-pill-container" style="margin-top: 1.5rem;">
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">React.js</span>
+
+                    <!-- Project 2 -->
+                    <div class="project-card reveal" data-category="ai">
+                        <div class="project-card-header">
+                            <div class="project-badges">
+                                <span class="status-pill featured">FEATURED</span>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">DeepDive Engine</h3>
+                        <p class="project-desc">Adaptive AI-driven learning and knowledge retention engine utilizing dynamic retrieval modeling, backed by published research paper.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI Models</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Research</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#research" class="project-link">Research Paper ↗</a>
+                            <a href="https://github.com/MRuhan17" target="_blank" class="project-link">GitHub ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card reveal" data-category="systems">
+                        <div class="project-card-header">
+                            <div class="project-badges">
+                                <span class="status-pill completed">● COMPLETED</span>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">Forge Terminal Workspace</h3>
+                        <p class="project-desc">High-performance terminal workspace built with Node.js & Rust, integrating natural language interface with low-level execution constraints.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Rust</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">CLI Systems</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/MRuhan17" target="_blank" class="project-link">GitHub ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card reveal" data-category="systems">
+                        <div class="project-card-header">
+                            <div class="project-badges">
+                                <span class="status-pill live">● LIVE</span>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">World Monitor Dashboard</h3>
+                        <p class="project-desc">Low-latency real-time geopolitical intelligence dashboard built to aggregate, normalize, and visualize live global data streams via web sockets.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">Data Engineering</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/MRuhan17" target="_blank" class="project-link">GitHub ↗</a>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/sh1p-logo.jpg" alt="SH1P" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Product & Growth Associate</h3>
-                            <span>SH1P • Full-time</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Mar 2026 — Jun 2026 • 4 mos</div>
-                    <p class="exp-desc">Early stage Product & Growth Associate role focused on understanding startup growth and user acquisition.</p>
+            <div class="section-divider"></div>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <span class="section-subtext">WORK & RESEARCH ROLES</span>
                 </div>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/roomroll-logo.jpg" alt="Roomroll" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                <div class="experience-list">
+                    <!-- ISRM -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/isrm-logo.jpg" alt="ISRM">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Research Mentor</h3>
+                                <div class="exp-company-sub">International Student Research Mentorship (ISRM) • Part-time</div>
+                            </div>
                         </div>
-                        <div class="exp-title">
-                            <h3>Founder</h3>
-                            <span>Roomroll • Full-time</span>
-                        </div>
+                        <div class="exp-date-tag">June 2026 — Present • Remote</div>
+                        <ul class="exp-bullet-list">
+                            <li>Mentor a cohort of 7 students conducting research in Computer Science and Artificial Intelligence.</li>
+                            <li>Guide students through research problem formulation, literature review, research methodology, and scientific writing.</li>
+                            <li>Provide mentorship on Python, machine learning fundamentals, and research best practices to support student-led projects.</li>
+                            <li>Review research progress, provide technical feedback, and foster critical thinking and analytical problem-solving skills.</li>
+                        </ul>
                     </div>
-                    <div class="exp-date">Jan 2026 — Jun 2026 • 6 mos</div>
-                    <div class="exp-date" style="margin-top: -0.5rem; margin-bottom: 1rem; font-size: 0.7rem; color: var(--text-muted);">Remote</div>
-                    <p class="exp-desc">Voluntarily sunsetted the project after completing the MVP phase to pivot focus toward full-time engineering roles.</p>
-                </div>
 
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div class="exp-icon" style="background: transparent; border: none; padding: 0;">
-                            <img src="assets/images/github-logo.jpg" alt="GitHub" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
-                        </div>
-                        <div class="exp-title">
-                            <h3>Open Source Contributor</h3>
-                            <span>GitHub • Freelance</span>
-                        </div>
-                    </div>
-                    
-                    <div class="exp-subroles">
-                        <div class="exp-subrole">
-                            <div class="exp-subrole-header">
-                                <h4 class="exp-subrole-title">Observer Patch Holography <span class="exp-subrole-type">Research</span></h4>
-                                <div class="exp-date">Apr 2026 — Jul 2026 • 4 mos</div>
+                    <!-- GitHub -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/github-logo.jpg" alt="GitHub">
                             </div>
-                            <ul class="exp-bullet-list">
-                                <li>Contributing to research-oriented simulations exploring holographic principles and theoretical physics models.</li>
-                                <li>Worked with computational approaches to model complex systems.</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="exp-subrole">
-                            <div class="exp-subrole-header">
-                                <h4 class="exp-subrole-title">adk-go <span class="exp-subrole-type">Tooling</span></h4>
-                                <div class="exp-date">Nov 2025 — Jul 2026 • 9 mos</div>
-                            </div>
-                            <ul class="exp-bullet-list">
-                                <li>Contributed to open-source Go-based tooling.</li>
-                                <li>Worked on performance and system-level improvements.</li>
-                            </ul>
-                            <div class="exp-skills-pill-container" style="margin-top: 0.5rem;">
-                                <span class="skill-tag">Go</span>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Open Source Contributor</h3>
+                                <div class="exp-company-sub">GitHub</div>
                             </div>
                         </div>
                         
-                        <div class="exp-subrole">
-                            <div class="exp-subrole-header">
-                                <h4 class="exp-subrole-title">LinkedIn Cruise Control <span class="exp-subrole-type">Data Systems</span></h4>
-                                <div class="exp-date">Nov 2025 — Jul 2026 • 9 mos</div>
+                        <div class="exp-subroles">
+                            <div class="exp-subrole">
+                                <div class="exp-subrole-header">
+                                    <h4 class="exp-subrole-title">Observer Patch Holography</h4>
+                                    <span class="exp-date-tag">April 2026 — Present</span>
+                                </div>
+                                <ul class="exp-bullet-list">
+                                    <li>Contributing to research-oriented simulations exploring holographic principles and theoretical physics models.</li>
+                                    <li>Worked with computational approaches to model complex systems.</li>
+                                    <li>Relevant areas: General Relativity, Quantum Gravity.</li>
+                                </ul>
                             </div>
-                            <ul class="exp-bullet-list">
-                                <li>Contributed to LinkedIn’s Cruise Control (Apache Kafka cluster management).</li>
-                                <li>Improved cluster rebalancing and monitoring efficiency.</li>
-                            </ul>
+                            
+                            <div class="exp-subrole">
+                                <div class="exp-subrole-header">
+                                    <h4 class="exp-subrole-title">adk-go</h4>
+                                    <span class="exp-date-tag">November 2025 — July 2026</span>
+                                </div>
+                                <ul class="exp-bullet-list">
+                                    <li>Contributed to open-source Go-based tooling.</li>
+                                    <li>Worked on performance and system-level improvements.</li>
+                                    <li>Relevant technology: Go.</li>
+                                </ul>
+                            </div>
+
+                            <div class="exp-subrole">
+                                <div class="exp-subrole-header">
+                                    <h4 class="exp-subrole-title">LinkedIn Cruise Control</h4>
+                                    <span class="exp-date-tag">November 2025 — July 2026</span>
+                                </div>
+                                <ul class="exp-bullet-list">
+                                    <li>Contributed to LinkedIn's Cruise Control, an Apache Kafka cluster management project.</li>
+                                    <li>Worked on improving cluster rebalancing and monitoring efficiency.</li>
+                                    <li>Relevant technology: Apache Kafka.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evalyze Labs -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/evalyze-logo.jpg" alt="Evalyze Labs">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Co-Founder & Research Lead</h3>
+                                <div class="exp-company-sub">Evalyze Labs • Full-time</div>
+                            </div>
+                        </div>
+                        <div class="exp-date-tag">March 2026 — Present</div>
+                        <ul class="exp-bullet-list">
+                            <li>Co-Founder & Research Lead at Evalyze Labs, an independent AI research lab focused on AI security, autonomous agents, AI benchmarking, and trustworthy machine learning systems.</li>
+                            <li>Lead the design and execution of research projects, benchmark suites, evaluation methodologies, datasets, and open-source research initiatives.</li>
+                            <li>Created and led the AgentShield Bench research series (v1–v3), introducing evaluation frameworks for adversarial agent workflows, memory security, persistent jailbreaks, cross-session compromise, goal hijacking, reward hacking, and long-horizon autonomous attacks on LLM agents.</li>
+                            <li>Published multiple open-access research papers and developed reproducible evaluation pipelines to assess the robustness, reliability, and security of modern AI agents.</li>
+                            <li>Research interests include AI security, autonomous agents, agent evaluation, prompt injection, memory attacks, retrieval-augmented generation (RAG) security, and trustworthy AI systems.</li>
+                        </ul>
+                    </div>
+
+                    <!-- FlyRank AI -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/flyrank-logo.jpg" alt="FlyRank AI">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Machine Learning Research Intern</h3>
+                                <div class="exp-company-sub">FlyRank AI • Internship</div>
+                            </div>
+                        </div>
+                        <div class="exp-date-tag">June 2026 — August 2026 • Remote</div>
+                        <ul class="exp-bullet-list">
+                            <li>Contributed to machine learning initiatives focused on AI-driven search, ranking systems, and data-driven optimization.</li>
+                            <li>Collaborated with the team to explore, develop, and evaluate ML solutions while gaining hands-on experience in applied artificial intelligence and large-scale data systems.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Microsoft -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/microsoft-logo.jpg" alt="Microsoft">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Microsoft Student Ambassador</h3>
+                                <div class="exp-company-sub">Microsoft • Full-time</div>
+                            </div>
+                        </div>
+                        <div class="exp-date-tag">August 2025 — August 2026 • Hyderabad, India • Remote</div>
+                        <ul class="exp-bullet-list">
+                            <li>Selected as a Microsoft Student Ambassador representing student technology communities.</li>
+                            <li>Hosted sessions on Microsoft Learn, cloud technologies, and developer tools.</li>
+                            <li>Engaged with the global ambassador network and contributed to community-driven initiatives.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mentiora -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/mentiora-logo.jpg" alt="Mentiora">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Mentiora</h3>
+                                <div class="exp-company-sub">Full-time & Internship</div>
+                            </div>
+                        </div>
+                        
+                        <div class="exp-subroles">
+                            <div class="exp-subrole">
+                                <div class="exp-subrole-header">
+                                    <h4 class="exp-subrole-title">Software Engineer</h4>
+                                    <span class="exp-date-tag">April 2026 — June 2026 • Remote</span>
+                                </div>
+                                <ul class="exp-bullet-list">
+                                    <li>Shipped multiple user-facing features using Next.js and React, improving user experience and product functionality.</li>
+                                    <li>Designed and optimized reusable UI components, reducing development time and enabling faster feature rollouts.</li>
+                                    <li>Contributed to debugging, performance optimization, and feature iteration alongside senior engineers.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="exp-subrole">
+                                <div class="exp-subrole-header">
+                                    <h4 class="exp-subrole-title">Software Engineering Intern</h4>
+                                    <span class="exp-date-tag">October 2025 — March 2026</span>
+                                </div>
+                                <ul class="exp-bullet-list">
+                                    <li>Contributed to production features using Next.js and React.</li>
+                                    <li>Built and improved user-facing components used by real users.</li>
+                                    <li>Wrote and tested scalable frontend logic in a startup environment.</li>
+                                    <li>Collaborated with engineers on feature iteration and bug fixes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SH1P -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/sh1p-logo.jpg" alt="SH1P">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Software Engineer Intern</h3>
+                                <div class="exp-company-sub">SH1P • Internship</div>
+                            </div>
+                        </div>
+                        <div class="exp-date-tag">February 2026 — June 2026</div>
+                        <ul class="exp-bullet-list">
+                            <li>Built and improved user-facing components used by real users.</li>
+                            <li>Wrote and tested scalable frontend logic in a startup environment.</li>
+                            <li>Collaborated with engineers on feature iteration and bug fixes.</li>
+                        </ul>
+                    </div>
+
+                    <!-- RoomRoll -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/roomroll-logo.jpg" alt="RoomRoll">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Founder (Acquired by Pied Piper)</h3>
+                                <div class="exp-company-sub">RoomRoll • Full-time</div>
+                            </div>
+                        </div>
+                        <div class="exp-date-tag">January 2026 — June 2026 • Remote</div>
+                        <ul class="exp-bullet-list">
+                            <li>Founded RoomRoll and built it from idea to MVP.</li>
+                            <li>Shipped features, fixed bugs, and iterated on the product while learning the realities of building a startup.</li>
+                            <li>Status: Acquired by Pied Piper.</li>
+                        </ul>
+                    </div>
+
+                    <!-- SYNK -->
+                    <div class="exp-card reveal">
+                        <div class="exp-top">
+                            <div class="exp-icon">
+                                <img src="assets/images/synk-logo.jpg" alt="SYNK">
+                            </div>
+                            <div class="exp-title-box">
+                                <h3 class="exp-role-heading">Research Development Engineering Intern</h3>
+                                <div class="exp-company-sub">SYNK • Internship</div>
+                            </div>
+                        </div>
+                        <div class="exp-date-tag">July 2025 — September 2025 • Remote</div>
+                        <ul class="exp-bullet-list">
+                            <li>Built scalable backend systems and APIs.</li>
+                            <li>Implemented and evaluated machine learning models.</li>
+                            <li>Designed experiments and analyzed results.</li>
+                            <li>Collaborated on research prototypes and production-ready software.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Research Section (Replacing Writing) -->
+            <section id="research">
+                <div class="research-header-row">
+                    <div>
+                        <h2 class="section-title">Research</h2>
+                        <span class="section-subtext">PUBLICATIONS & TECHNICAL REPORTS</span>
+                    </div>
+                    <a href="https://zenodo.org/communities/evalyze-labs" target="_blank" class="research-link-external">
+                        zenodo.org/communities/evalyze-labs ↗
+                    </a>
+                </div>
+
+                <div class="research-list">
+                    <!-- Paper 1 -->
+                    <div class="research-item reveal">
+                        <div class="research-date">Aug 2026</div>
+                        <div class="research-main-info">
+                            <h3 class="research-paper-title">AgentShield Bench v3: Evaluating Goal Integrity and Resilience of Autonomous LLM Agents</h3>
+                            <p class="research-snippet">Introduces Goal Integrity Score (GIS) and Goal Integrity Drop (GID) metrics across 250 experimental scenarios spanning Goal Drift, Tool Manipulation, and Reward Hacking.</p>
+                        </div>
+                        <div class="research-meta-right">
+                            <a href="https://zenodo.org/records/20834892" target="_blank" class="project-link">Zenodo ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Paper 2 -->
+                    <div class="research-item reveal">
+                        <div class="research-date">Jul 2026</div>
+                        <div class="research-main-info">
+                            <h3 class="research-paper-title">AgentShield Bench v2: Memory Security & Cross Session Compromise in Autonomous Agents</h3>
+                            <p class="research-snippet">Investigates long-term memory security vulnerabilities, persistent jailbreaks, and cross-session compromise behavior in LLM agents with 320 attack scenarios.</p>
+                        </div>
+                        <div class="research-meta-right">
+                            <a href="https://zenodo.org/records/20756086" target="_blank" class="project-link">Zenodo ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Paper 3 -->
+                    <div class="research-item reveal">
+                        <div class="research-date">Jun 2026</div>
+                        <div class="research-main-info">
+                            <h3 class="research-paper-title">AgentShield Bench: Security Resilience of LLM Agents Against Adversarial Workflows</h3>
+                            <p class="research-snippet">Presents a security benchmarking dataset containing 130 attack scenarios spanning prompt injection, retrieval poisoning, and data exfiltration.</p>
+                        </div>
+                        <div class="research-meta-right">
+                            <a href="https://zenodo.org/records/20677149" target="_blank" class="project-link">Zenodo ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Paper 4 -->
+                    <div class="research-item reveal">
+                        <div class="research-date">May 2026</div>
+                        <div class="research-main-info">
+                            <h3 class="research-paper-title">Evaluating Prompt Injection Vulnerabilities in AI Agents</h3>
+                            <p class="research-snippet">Structured taxonomy of prompt injection attacks, measuring Attack Success Rate (ASR) and evaluating defense mechanisms across LLM agent architectures.</p>
+                        </div>
+                        <div class="research-meta-right">
+                            <a href="https://zenodo.org/records/20631345" target="_blank" class="project-link">Zenodo ↗</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section-padding">
-        <div class="container">
-            <div class="experience-header reveal" style="margin-bottom: 2rem;">
-                <h2 style="font-size: 2.5rem; font-weight: 500;">Systems & Repositories</h2>
-                <div class="section-label" style="margin: 0;"><span style="letter-spacing: -1px;">=</span></div>
-            </div>
-            
-            <div class="notes-list">
-                <div class="note-item reveal">
-                    <div class="note-plus">+</div>
-                    <div class="note-content">
-                        <h3>DeepDive: Adaptive AI-driven learning engine</h3>
-                        <p>Architected a system utilizing dynamic knowledge retrieval and retention modeling. Backed by a published research paper.</p>
-                        <div class="note-meta">Python • AI Models • Research</div>
-                    </div>
-                    <div class="note-arrow">&rarr;</div>
+            <div class="section-divider"></div>
+
+            <!-- Tech Stack / Skills Section -->
+            <section id="skills">
+                <div class="section-header">
+                    <h2 class="section-title">Tech Stack</h2>
+                    <span class="section-subtext">( select tab to filter )</span>
                 </div>
 
-                <div class="note-item reveal">
-                    <div class="note-plus">+</div>
-                    <div class="note-content">
-                        <h3>Predictive ML Pipelines for complex data distributions</h3>
-                        <p>Engineered robust statistical simulation and recommendation systems (F1, Premier League) using Python and R to model real-world data.</p>
-                        <div class="note-meta">Python • R • Machine Learning</div>
-                    </div>
-                    <div class="note-arrow">&rarr;</div>
+                <div class="tech-tabs reveal">
+                    <button class="filter-btn active" data-tech-category="all">All</button>
+                    <button class="filter-btn" data-tech-category="languages">Languages</button>
+                    <button class="filter-btn" data-tech-category="ai">AI / ML & Research</button>
+                    <button class="filter-btn" data-tech-category="backend">Backend</button>
+                    <button class="filter-btn" data-tech-category="frontend">Frontend</button>
+                    <button class="filter-btn" data-tech-category="databases">Databases</button>
+                    <button class="filter-btn" data-tech-category="devops">DevOps & Tools</button>
                 </div>
 
-                <div class="note-item reveal">
-                    <div class="note-plus">+</div>
-                    <div class="note-content">
-                        <h3>Forge: High-performance terminal workspace</h3>
-                        <p>Built using Node.js and Rust, integrating a natural language interface with strict, low-level system execution constraints.</p>
-                        <div class="note-meta">Node.js • Rust • CLI Systems</div>
-                    </div>
-                    <div class="note-arrow">&rarr;</div>
+                <div class="tech-grid reveal">
+                    <span class="tech-pill" data-category="languages">Python</span>
+                    <span class="tech-pill" data-category="languages">TypeScript</span>
+                    <span class="tech-pill" data-category="languages">Go</span>
+                    <span class="tech-pill" data-category="languages">Rust</span>
+                    <span class="tech-pill" data-category="languages">C++</span>
+                    <span class="tech-pill" data-category="ai">PyTorch</span>
+                    <span class="tech-pill" data-category="ai">LLM Red-Teaming</span>
+                    <span class="tech-pill" data-category="ai">Agent Security</span>
+                    <span class="tech-pill" data-category="ai">RAG Security</span>
+                    <span class="tech-pill" data-category="backend">Node.js</span>
+                    <span class="tech-pill" data-category="backend">Express.js</span>
+                    <span class="tech-pill" data-category="backend">Apache Kafka</span>
+                    <span class="tech-pill" data-category="backend">REST & WebSockets</span>
+                    <span class="tech-pill" data-category="frontend">Next.js</span>
+                    <span class="tech-pill" data-category="frontend">React.js</span>
+                    <span class="tech-pill" data-category="frontend">Tailwind CSS</span>
+                    <span class="tech-pill" data-category="databases">PostgreSQL</span>
+                    <span class="tech-pill" data-category="databases">MongoDB</span>
+                    <span class="tech-pill" data-category="databases">Prisma</span>
+                    <span class="tech-pill" data-category="devops">Git / GitHub</span>
+                    <span class="tech-pill" data-category="devops">Docker</span>
+                    <span class="tech-pill" data-category="devops">Linux CLI</span>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="section-header">
+                    <h2 class="section-title">Contact</h2>
+                    <span class="section-subtext">GET IN TOUCH</span>
                 </div>
 
-                <div class="note-item reveal">
-                    <div class="note-plus">+</div>
-                    <div class="note-content">
-                        <h3>World Monitor: Low-latency geopolitical dashboard</h3>
-                        <p>Developed a real-time intelligence dashboard built to aggregate, normalize, and visualize live global data streams via web sockets.</p>
-                        <div class="note-meta">Data Engineering • Web Sockets</div>
-                    </div>
-                    <div class="note-arrow">&rarr;</div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="contact-tiles-grid reveal">
+                    <a href="https://github.com/MRuhan17" target="_blank" class="contact-tile">
+                        <div class="contact-tile-inner">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            GitHub
+                        </div>
+                        <span>↗</span>
+                    </a>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section-padding" style="background-color: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="container">
-            <div class="section-label">Research</div>
-            
-            <div class="publications-header reveal">
-                <div class="pub-header-content">
-                    <h2 class="huge-text">Research & Publications</h2>
-                    <p class="pub-subtitle">Research contributions in AI Security, AI Safety, Machine Learning, AI Agents, and Emerging Technologies.</p>
-                    
-                    <div class="profile-links">
-                        <a href="https://orcid.org/0009-0002-2510-2778" target="_blank" class="profile-badge orcid" aria-label="ORCID Profile">
-                            <svg class="badge-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-4.708 17.5H6v-11h1.292v11zm-.646-12.278c-.414 0-.75-.336-.75-.75s.336-.75.75-.75.75.336.75.75-.336.75-.75.75zm9.52 12.278h-2.125V14.12c0-1.077-.864-1.942-1.942-1.942H10.83v5.322H9.538v-11h2.585c2.316 0 4.192 1.876 4.192 4.192 0 1.543-.837 2.894-2.091 3.633v.01c1.246.738 2.083 2.094 2.083 3.637v1.85z"/>
-                            </svg>
-                            <span>ORCID Profile</span>
-                        </a>
-                        <a href="https://zenodo.org/communities/evalyze-labs/records?q=&l=list&p=1&s=10&sort=newest" target="_blank" class="profile-badge zenodo" aria-label="Zenodo Community">
-                            <svg class="badge-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 8v8M8 12h8"></path>
-                            </svg>
-                            <span>Zenodo Community</span>
-                        </a>
-                        <a href="https://github.com/MRuhan17" target="_blank" class="profile-badge evalyze" aria-label="Evalyze Labs on GitHub">
-                            <svg class="badge-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-                            </svg>
-                            <span>Evalyze Labs</span>
-                        </a>
-                    </div>
+                    <a href="https://www.linkedin.com/in/ruhulalemeen-mulla" target="_blank" class="contact-tile">
+                        <div class="contact-tile-inner">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            LinkedIn
+                        </div>
+                        <span>↗</span>
+                    </a>
+
+                    <a href="mailto:ruhanmulla07@gmail.com" class="contact-tile">
+                        <div class="contact-tile-inner">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                            Mail
+                        </div>
+                        <span>↗</span>
+                    </a>
+
+                    <a href="assets/Ruhulalemeen_Mulla_Resume.pdf" target="_blank" rel="noopener" class="contact-tile">
+                        <div class="contact-tile-inner">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            Resume
+                        </div>
+                        <span>↗</span>
+                    </a>
                 </div>
 
-                <div class="publications-stats-grid">
-                    <div class="pub-stat-item">
-                        <div class="number" id="stat-total-publications">0</div>
-                        <div class="label">Publications</div>
-                    </div>
-                    <div class="pub-stat-item">
-                        <div class="number" id="stat-research-areas">0</div>
-                        <div class="label">Research Areas</div>
-                    </div>
-                    <div class="pub-stat-item">
-                        <div class="number" id="stat-years-active">—</div>
-                        <div class="label">Years Active</div>
-                    </div>
-                    <div class="pub-stat-item">
-                        <div class="number" id="stat-published-works">0</div>
-                        <div class="label">Published Works</div>
-                    </div>
+                <div class="hero-bio reveal">
+                    <p>Open for research collaborations, AI security red-teaming, and technical leadership roles. Drop me a line at <a href="mailto:ruhanmulla07@gmail.com" style="color: var(--text-primary); text-decoration: underline;">ruhanmulla07@gmail.com</a>.</p>
                 </div>
-            </div>
+            </section>
 
-            <!-- Discovery Controls -->
-            <div class="pub-controls reveal">
-                <div class="search-wrapper">
-                    <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="7" cy="7" r="5"/>
-                        <path d="M15 15L11 11"/>
-                    </svg>
-                    <input type="text" id="pub-search" placeholder="Search publications by title, abstract, or tag..." aria-label="Search publications">
-                </div>
-                
-                <div class="dropdown-wrapper">
-                    <label for="pub-sort" class="sr-only">Sort by</label>
-                    <select id="pub-sort">
-                        <option value="newest">Newest First</option>
-                        <option value="oldest">Oldest First</option>
-                        <option value="title">Title (A-Z)</option>
-                    </select>
-                </div>
-            </div>
+            <!-- Minimal Footer -->
+            <footer class="footer-bar">
+                <div>&copy; 2026 Ruhulalemeen Mulla. All rights reserved.</div>
+                <div>Designed & Built for AI Systems Research</div>
+            </footer>
 
-            <div class="filter-group-container reveal">
-                <div class="filter-row">
-                    <span class="filter-label">Research Areas:</span>
-                    <div id="research-area-filters" class="filters-pills-row">
-                        <!-- Dynamic Buttons -->
-                    </div>
-                </div>
-                <div class="filter-row">
-                    <span class="filter-label">Type:</span>
-                    <div id="publication-type-filters" class="filters-pills-row">
-                        <!-- Dynamic Buttons -->
-                    </div>
-                </div>
-            </div>
+        </main>
 
-            <!-- Grid Container -->
-            <div id="publications-grid" class="pub-grid">
-                <!-- Dynamic cards render here -->
+        <!-- Right Column: Sticky INDEX Navigation -->
+        <aside class="right-gutter">
+            <div class="sticky-index">
+                <div class="index-title">INDEX</div>
+                <nav class="index-nav">
+                    <a href="#about" class="index-item active">About</a>
+                    <a href="#projects" class="index-item">Projects</a>
+                    <a href="#experience" class="index-item">Experience</a>
+                    <a href="#research" class="index-item">Research</a>
+                    <a href="#skills" class="index-item">Skills</a>
+                    <a href="#contact" class="index-item">Contact</a>
+                    <a href="https://github.com/MRuhan17" target="_blank" class="index-item">GitHub</a>
+                </nav>
             </div>
-
-            <!-- Empty State -->
-            <div id="publications-empty-state" class="pub-empty-state" style="display: none;">
-                <svg class="empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <h3>No publications found</h3>
-                <p>Try adjusting your search terms or filters.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- BibTeX Citation Modal -->
-    <div id="bibtex-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h3 id="modal-title">BibTeX Citation</h3>
-                <button id="close-modal" class="modal-close-btn" aria-label="Close modal">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <pre><code id="modal-citation-code"></code></pre>
-            </div>
-            <div class="modal-footer">
-                <button id="copy-modal-bibtex" class="pub-btn primary-btn">
-                    Copy Citation
-                </button>
-            </div>
-        </div>
+        </aside>
     </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-label">Let's build something</div>
-            
-            <div class="contact-grid">
-                <div class="contact-left reveal">
-                    <h2>Start<br>collaboration</h2>
-                    <span class="arrow">&rarr;</span>
-                </div>
-                
-                <div class="contact-columns reveal">
-                    <div class="contact-group">
-                        <h4>Direct</h4>
-                        <a href="mailto:ruhanmulla07@gmail.com" class="contact-link">
-                            ruhanmulla07@gmail.com <span class="slash">&rarr;</span>
-                        </a>
-                    </div>
-                    
-                    <div class="contact-group">
-                        <h4>Social</h4>
-                        <a href="https://github.com/MRuhan17" target="_blank" class="contact-link">
-                            GitHub @MRuhan17 <span class="slash">/</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ruhulalemeen-mulla" target="_blank" class="contact-link">
-                            LinkedIn @ruhulalemeen <span class="slash">/</span>
-                        </a>
-                        <a href="#" class="contact-link">
-                            Resume Download <span class="slash">/</span>
-                        </a>
-                    </div>
-                    
-                    <div class="contact-group">
-                        <h4>Availability</h4>
-                        <div class="contact-link" style="border: none; cursor: default;">
-                            <span style="display: flex; align-items: center; gap: 0.5rem; color: #10b981; font-size: 0.85rem;"><span class="dot-green"></span> Open for projects</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-logo">R—M</div>
-                <div>&copy; 2026 Ruhulalemeen Mulla. All rights reserved.</div>
-                <div class="footer-links">
-                    <a href="https://github.com/MRuhan17">GitHub /</a>
-                    <a href="https://www.linkedin.com/in/ruhulalemeen-mulla">LinkedIn /</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Script -->
+    <!-- Scripts -->
     <script src="js/publications.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Clock script specific to this design
-        function updateClock() {
-            const now = new Date();
-            const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit' };
-            const timeString = now.toLocaleTimeString('en-US', options).replace(':', ' : ');
-            document.getElementById('local-time').innerHTML = timeString + ' <span style="font-size: 0.6rem; color: #888;">IST</span>';
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
 </body>
 </html>
